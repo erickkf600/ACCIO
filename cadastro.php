@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br" >
-
 <head>
   <meta charset="UTF-8">
   <title>ACCIO</title>
       <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-
     <link rel="stylesheet" href="css/style.css">
-
-  
 </head>
 <header class="btn btn-warning" style="width: 100%;">
   <a href="index.php">
       <img class="logo" src="css/logo.png" alt="logo"></a> 
 </header>
 <body>
-
-  <!-- MultiStep Form -->
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <form id="msform" method="post" action="cad.php">
@@ -30,7 +23,6 @@
                 <li>Informações de Envio e Cobrança</li>
                 <li>Informações do Usuário</li>
             </ul>
-            <!-- fieldsets -->
             <fieldset>
                 <h2 class="fs-title">Informações de Contato</h2>
                 <input type="text" placeholder="Nome Completo" name="nome">
@@ -39,7 +31,6 @@
                 <input type="number" min='0' placeholder="Celular" name="cel">
                 <input type="button" name="next" class="next action-button" value="Next" />
             </fieldset>
-
             <fieldset>
                 <h2 class="fs-title">Informações de Envio e Cobrança</h2>
                 <input type="number" min='0' placeholder="CEP" name="cep">
@@ -49,7 +40,6 @@
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                 <input type="button" name="next" class="next action-button" value="Next"/>
             </fieldset>
-
             <fieldset>
                 <h2 class="fs-title">Informações do Usuário</h2>
                 <input type="date"  placeholder="Data de Nascimento" name="datanasc">
@@ -58,10 +48,9 @@
                 <input type="password"  placeholder="Senha" name="senha">
                 <input type="password"  placeholder="Comfirme sua Senha" onblur="conf()" id="csenha" name="consenha">
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                <input type="submit" name="submit" value="Submit"/>
             </fieldset>
         </form>
-        <!-- link to designify.me code snippets -->
         <div class="dme_link">
             <p><a data-toggle="modal" data-target="#myModal" href="#">Já sou Cadastrado</a></p>
         </div>
@@ -70,18 +59,9 @@
         ?>
     </div>
 </div>
-<!-- /.MultiStep Form -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
-
-  
-
-    <script  src="js/index.js"></script>
-
-
-
-
+<script  src="js/index.js"></script>
 </body>
-
 </html>
