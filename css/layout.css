@@ -1,11 +1,46 @@
-
-.dropdown-menu{
-    box-shadow:1px 1px 3px #333;
+.tab2 {
+    float: right;
+    background-color: #fff;
+    width: 15%;
 }
 
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 18%;
+    height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    text-align: center;
+    padding: 22px 16px;
+    width: 92%;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #000;
+    color:#fff;
+}
        /*Navbar mudar com a tela menor*/
 
 @media screen {
+.traco{
+    border-left: solid 3px #000;
+    padding-left: 20px;
+
+}    
 .user{
   font-size:2em;
   color:black;
@@ -13,23 +48,12 @@
   cursor: pointer;
 } 
 
-.nav-item{display: none;}  
+#respons{display: none;}  
 .pesq{display: none;} 
 .menu{display: none;}
 
 
-}
-@media only screen and (max-width: 1119px){ 
-.dropbtn{
-    display:none;
-}    
-.sidenav{
-    display: none;
-    }
-.menu{
-    display: inherit;
-    }    
-}    
+} 
 
 @media only screen and (max-width: 991px) {
 .user{
@@ -39,7 +63,7 @@ display: none;
 .search{
     display: none;
 }
-.nav-item{
+#respons{
 	display:inherit;
 }
 .pesq{
@@ -50,9 +74,12 @@ display: none;
 	margin-top: 0%;
 }
 
-.logo{
-	display: none;
-	} 
+#sticky{
+    display: none;
+    }
+.menu{
+    display:block;
+    }        
 }
 
 		/*Categorias*/
@@ -62,30 +89,6 @@ display: none;
 	border: 0.5px solid #ccc;
 	border-bottom: 0px; 
 }
-
-        /*Side nav*/
-.sidenav {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-.sidenav a:hover {
-    color: black;
-}
-
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -124,5 +127,24 @@ display: none;
     transition-duration: 0.5s;
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 
 
