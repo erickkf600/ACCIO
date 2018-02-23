@@ -29,7 +29,7 @@
                 <input type="email" placeholder="Email" name="email">
                 <input type="number" min='0' placeholder="Telefone Fixo" name="telresid">
                 <input type="number" min='0' placeholder="Celular" name="cel">
-                <input type="button" name="next" class="next action-button" value="Next" />
+                <input type="button" name="next" class="next action-button" value="Proximo" />
             </fieldset>
             <fieldset>
                 <h2 class="fs-title">Informações de Envio e Cobrança</h2>
@@ -38,7 +38,7 @@
                 <input type="text" placeholder="Cidade" name="cidade">
                 <input type="text" placeholder="Bairro" name="bairro">
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
+                <input type="button" name="next" class="next action-button" value="Procimo"/>
             </fieldset>
             <fieldset>
                 <h2 class="fs-title">Informações do Usuário</h2>
@@ -47,8 +47,8 @@
                 <input type="text"  placeholder="Nome de Usuário" name="usuario">
                 <input type="password"  placeholder="Senha" name="senha">
                 <input type="password"  placeholder="Comfirme sua Senha" onblur="conf()" id="csenha" name="consenha">
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="submit" name="submit" value="Submit"/>
+                <input type="button" name="previous" class="previous action-button-previous" value="Voltar"/>
+                <input type="submit" name="submit" value="Cadastrar"/>
             </fieldset>
         </form>
         <div class="dme_link">
