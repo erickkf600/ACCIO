@@ -2,6 +2,8 @@
     include "includes/localizacao.inc"
 ?>
 
+
+
 <link rel="stylesheet" href="css/footer.css">
 
 <div class="footer" id="footer">
@@ -65,16 +67,18 @@
     </div>
     <!--/.footer-->
     
+        
     <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Copyright © ACCIO - 2018. All right reserved. </p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                	<li><i class="fab fa-cc-visa"></i></li>
-                    <li><i class="fab fa-cc-mastercard"></i></li>
-                    <li><i class="fas fa-barcode fa-lg"></i></li>
-                    <li><i class="fab fa-cc-paypal"></i></li>
-                </ul> 
+        <div class="container pb-2">
+                <div class="pull-right" style="font-size:1.5em;">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-barcode"></i>
+                    <i class="fab fa-paypal"></i>
+                </div>
+            <p class="text-center"> Copyright © ACCIO - 2018. All right reserved. </p>
+
             </div>
         </div>
     </div>
+
