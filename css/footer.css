@@ -1,8 +1,8 @@
 			/*Barra de Pesquisa*/
-
 input[type=text] {
-    width: 20%;
-    background-color: black;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -13,19 +13,18 @@ input[type=text] {
     padding: 5px 5px 5px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
-    float: right;
+    float: right; 
 }
 
 input[type=text]:focus {
-    width: 150%;
+    width: 250%;
 }
 
 @media only screen and (max-width: 991px) {
 	input[type=text] {
     width: 100%;
-} 
+	} 
 }
-
 
 .full {
     width: 100%;	
@@ -142,13 +141,4 @@ input[type=text]:focus {
 }
 .footer-bottom p.pull-left {
 	padding-top: 6px;
-}
-.payments {
-	font-size: 1.5em;	
-	margin-left: 75%;
-	margin-top: -3%;
-}
-
-.payments li{
-	margin-left: 1.5%;
 }

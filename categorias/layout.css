@@ -51,9 +51,7 @@ body{
   cursor: pointer;
 } 
 
-#respons{display: none;}  
-.pesq{display: none;} 
-.menu{display: none;}
+
 
 
 } 
@@ -74,7 +72,7 @@ display: none;
 }
   
 .container{
-
+	margin-top: 0%;
 }
 
 #sticky{

@@ -1,5 +1,5 @@
 <?php 
-  include "site.php";
+  include "menu.php";
 
  ?>
 
@@ -18,11 +18,8 @@
     <title>ACCIO</title>
   </head>
   <body>
-    <div class="container-fluid text-center">    
+    <div class="container">    
       <div class="row content">
-  	<?php
-  	include "sidenav.inc";
-  	?>
 
     <div class="col-md-8 col-sm-8 text-left"> 
       <div class="container">
@@ -38,6 +35,8 @@
       <h3>Lembre-se</h3>
       <b>Cada forma de pagamento tem um prazo de confirmação.
 		Fique atento aos prazos solicitados pelas devidas instituições financeiras responsáveis.</b>
+
+    
     </div>
 
   </div>
