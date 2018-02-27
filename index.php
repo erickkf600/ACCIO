@@ -1,29 +1,28 @@
 <?php
    include "login.php";
-   ?>
+   session_start();
+   
+   $email = $_SESSION['email'];
+   $senha = $_SESSION['senha'];
+
+?>
 <!doctype html>
 <html lang="pt-br">
    <head>
-      <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
       <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
       <link rel="stylesheet" href="css/layout.css">
       <link rel="stylesheet" href="css/slider.css">
-      <!-- OWL CAROUSEL CSS-->  
       <link rel="stylesheet" href="css/vitrine/docs.theme.min.css">
       <link rel="stylesheet" href="css/vitrine/owl.carousel.min.css">
       <link rel="stylesheet" href="css/vitrine/owl.theme.default.min.css">
-                              <!--Logos-->
       <link rel="stylesheet" href="css/logo/docs.theme.min.css">
       <link rel="stylesheet" href="css/logos/owl.carousel.min.css">
       <link rel="stylesheet" href="css/logos/owl.theme.default.min.css">
-      <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <!--OWL CAROUSEL SCRIPT-->
       <script src="js/jquery.min.js"></script>
       <script src="js/owl.carousel.js"></script> 
-
    </head>
    <body style="background-color: #efefef;">
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
@@ -45,14 +44,22 @@
             </div>
             <div class="user">
                <span class="traco"></span>    
-               <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
+                <?php
+                 if (empty($_SESSION['email'])){
+                   echo "login";
+             }else{
+               
+            echo "$email";
+            }
+             ?>   
+             <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>   
                <a  href="cadastro.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>
                <a  href="favoritos.php"><i class="far fa-heart" style="color: #000;"></i></a>
-               <a  href="carrinho.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
+               <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
             <li id="respons" class="nav-item">
                <a class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" href="">Login</a>
-            </li>
+             </li>
             <li id="respons" class="nav-item">
                <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
             </li>
@@ -138,7 +145,6 @@
          <?php
          include "conteudo.php"
          ?>
-
    <hr>
    </div>  
    <footer>
