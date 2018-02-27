@@ -1,38 +1,14 @@
-<!doctype html>
-<html lang="pt-br">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/layout.css">
-      <link rel="stylesheet" href="css/slider.css">
-      <!-- OWL CAROUSEL CSS-->  
-      <link rel="stylesheet" href="css/vitrine/docs.theme.min.css">
-      <link rel="stylesheet" href="css/vitrine/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/vitrine/owl.theme.default.min.css">
-                              <!--Logos-->
-      <link rel="stylesheet" href="css/logo/docs.theme.min.css">
-      <link rel="stylesheet" href="css/logos/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/logos/owl.theme.default.min.css">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!--OWL CAROUSEL SCRIPT-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/owl.carousel.js"></script>  
-      <!--***************-->               
-      <title>Hello, world!</title>
-   </head>
+
    <body style="background-color: #efefef;">
       <div>
          <?php
             include "carrosel.inc"
             ?>
       </div>
+   </div>  
       </head>
       <body>
-         <hr>
+         <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
          <div class="container mt-4">
             <div class="row">
                <div class="col-md-12 text-center text-secondary">
@@ -41,7 +17,7 @@
             </div>
          </div>
          <!--  slides -->
-         <div class="container-fluid mt-3">
+         <div class="container">
             <div class="row">
                <div class="owl-carousel owl-theme">
                   <div class="item">
@@ -131,13 +107,14 @@
                </div>
             </div>
          </div>
-         <hr>
-         <div class="container text-center">
+
+         <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
+         <div class="container text-center pl-3">  
          <div class="row sm-8 mt-4" id="prop">
             <iframe src="img/promocao/banner.gif" width="100%" height="200" frameBorder="0"></iframe>
          </div>
          </div>
-         <hr>
+
          <div class="container mt-4">
             <div class="row">
                <div class="col-md-12 text-center text-secondary">
@@ -237,10 +214,9 @@
             </div>
          </div>
 
+         <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
 
-         <hr>
-
-          <div class="container">
+      <div class="container">
       <div class="row">
         <div class="large-12 columns">
           <div class="owl-carousel1" id="marcas">
@@ -257,14 +233,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>   
-         <script type="text/javascript" src="js/index.js"></script>
-         <script type="text/javascript" src="js/logos.js"></script>
-         <script type="text/javascript" src="js/vitrine.js"></script>
-
-         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+    </div>  
    </body>
 </html>

@@ -77,9 +77,6 @@ $(".previous").click(function(){
 	});
 });
 
-$(".submit").click(function(){
-	return false;
-})
 
 function conf(){
 			senha = document.getElementById("senha").value;
@@ -114,6 +111,9 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+
+
 
 
 

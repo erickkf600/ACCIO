@@ -9,7 +9,7 @@
 <body>
 <footer>
 <link rel="stylesheet" href="../../css/footer.css">
-
+<hr>
 <div class="footer" id="footer">
         <div class="container">
             <div class="row">
