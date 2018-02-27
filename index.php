@@ -42,7 +42,7 @@
                   <input type="text" name="search" placeholder="Pesquisar">
                </form>
             </div>
-            span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
+            <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
                <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
                    <?php
                      if (empty($_SESSION['email'])){
