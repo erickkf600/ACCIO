@@ -1,8 +1,7 @@
 $('.owl-carousel').owlCarousel({
               loop:true,
               center: true,
-              items:3,
-              margin:50,
+              margin:-750,
               nav:true,
               navText: [
                       "<i class='fas fa-chevron-circle-left'></i>",
@@ -10,14 +9,17 @@ $('.owl-carousel').owlCarousel({
                   ],  
               responsive:{
               0:{
-                  items:1
+                  items:1,
+                  margin:50,
+                  autoWidth:true,
               },
               1000:{
-                  items:2
+                  items:3,
+                  margin:50,
+                  autoWidth:true,
               },
               2000:{
                 items:4
               }
     }
 })
-

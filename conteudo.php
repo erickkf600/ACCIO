@@ -17,99 +17,86 @@
             </div>
          </div>
          <!--  slides -->
-         <div class="container">
-            <div class="row">
+         <div class="container-fluid">
+            <div class="row-equal">
                <div class="owl-carousel owl-theme">
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div  class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <a href="" class="btn btn-warning btn-sm">Comprar</a>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
+                      <p class="font-weight-normal">Avista: <span class="text-center text-danger">R$ 750,00</span></p>
+                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                      <a class="btn btn-warning btn-sm">Comprar</a>
+                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                      </div>
+                      </div>
 
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <a class="btn btn-warning btn-sm">Comprar</a>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
+                      <p class="font-weight-normal">Avista: <span class="text-center text-danger">R$ 750,00</span></p>
+                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                      <a class="btn btn-warning btn-sm">Comprar</a>
+                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                      </div>
+                      </div>
 
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
 
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
+                      <p class="font-weight-normal">Avista: <span class="text-center text-danger">R$ 750,00</span></p>
+                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                      <a class="btn btn-warning btn-sm">Comprar</a>
+                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                      </div>
+                      </div>
 
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
 
-                  <a href="#" style="text-decoration: none; color:#000;"><div class="item">
-                     <div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div>
-                  </div></a>
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
+                      <p class="font-weight-normal">Avista: <span class="text-center text-danger">R$ 750,00</span></p>
+                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                      <a class="btn btn-warning btn-sm">Comprar</a>
+                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                      </div>
+                      </div>
+
+
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
+                      <p class="font-weight-normal">Avista: <span class="text-center text-danger">R$ 750,00</span></p>
+                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                      <a class="btn btn-warning btn-sm">Comprar</a>
+                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                      </div>
+                      </div>
+
+
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
+                      <p class="font-weight-normal">Avista: <span class="text-center text-danger">R$ 750,00</span></p>
+                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                      <a class="btn btn-warning btn-sm">Comprar</a>
+                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                      </div>
+                      </div>
+
 
                </div>
             </div>
          </div>
 
          <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
-         <div class="container text-center pl-3">  
+         <div class="container text-center">  
          <div class="row sm-8 mt-4" id="prop">
             <iframe src="img/promocao/banner.gif" width="100%" height="200" frameBorder="0"></iframe>
          </div>
@@ -123,96 +110,101 @@
             </div>
          </div>
 
-         <div class="container  mt-3">
-            <div class="row">
-               <div class="owl-carousel owl-theme" id="items2">
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div  class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <a href="" class="btn btn-warning btn-sm">Comprar</a>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
+         <div class="container text-center  mt-3">
+            <div class="tz-gallery"> 
+
+        <div class="row md-3">
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Gabinete NZXT Phantom 530</h3>
+                    <p>CA-PH530-W1 - Branco</p>
+                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
+                    <p>Ou parcele em até 6x sem juros</p>
+                    <a class="btn btn-warning btn-sm">Comprar</a>
+                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
                   </div>
-
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <a class="btn btn-warning btn-sm">Comprar</a>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
-
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
-
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
-
-                  <div class="item">
-                     <a href="#" style="text-decoration: none; color:#000;"><div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div></a>
-                  </div>
-
-                  <a href="#" style="text-decoration: none; color:#000;"><div class="item">
-                     <div class="card">
-                        <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
-                        <div class="card-body">
-                           <h3>Gabinete NZXT - Phantom 530</h3>
-                           <p>CA-PH530-W1 - Branco</p>
-                           <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                           <p>Ou parcele em até 6x sem juros</p>
-                           <button class="btn btn-warning btn-sm">Comprar</button>
-                           <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                        </div>
-                     </div>
-                  </div></a>
-
-               </div>
+                </div>
             </div>
+             
+            <div class="col-md-4  mt-3">
+                <div class="card">
+                  <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
+                    <div class="card-body">
+                      <h3>Gabinete NZXT Phantom 530</h3>
+                      <p>CA-PH530-W1 - Branco</p>
+                      <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
+                    <p>Ou parcele em até 6x sem juros</p>
+                    <a class="btn btn-warning btn-sm">Comprar</a>
+                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
+                    </div>
+                  </div>
+            </div>
+             
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Gabinete NZXT Phantom 530</h3>
+                    <p>CA-PH530-W1 - Branco</p>
+                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
+                    <p>Ou parcele em até 6x sem juros</p>
+                    <a class="btn btn-warning btn-sm">Comprar</a>
+                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row md-3">
+
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Gabinete NZXT Phantom 530</h3>
+                    <p>CA-PH530-W1 - Branco</p>
+                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
+                    <p>Ou parcele em até 6x sem juros</p>
+                    <a class="btn btn-warning btn-sm">Comprar</a>
+                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
+                  </div>
+                </div>
+            </div>
+
+             <div class="col-md-4 mt-3">
+              <div class="card">
+                <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Gabinete NZXT Phantom 530</h3>
+                    <p>CA-PH530-W1 - Branco</p>
+                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
+                    <p>Ou parcele em até 6x sem juros</p>
+                    <a class="btn btn-warning btn-sm">Comprar</a>
+                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
+                  </div>
+                </div>
+            </div>
+
+             <div class="col-md-4 mt-3">
+              <div class="card">
+                <img src="img/catalogo/530.jpg" alt="gabinete" class="card-img-top">
+                  <div class="card-body">
+                    <h3>Gabinete NZXT Phantom 530</h3>
+                    <p>CA-PH530-W1 - Branco</p>
+                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
+                    <p>Ou parcele em até 6x sem juros</p>
+                    <a class="btn btn-warning btn-sm">Comprar</a>
+                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
+                  </div>
+                </div>
+            </div>
+
          </div>
+
+        </div> 
+        </div><!--fechar container-->
 
          <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
 
