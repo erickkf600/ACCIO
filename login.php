@@ -17,10 +17,12 @@
             </div>
               <button type="submit" class="btn btn-dark btn-block">Login</button>
             </div>
+            <label>
+                <input type="checkbox" name="con"> Manter Conectado</label>
         </form>
         <div class="modal-footer">
             <a class="dropdown-item" href="recuperar.php">Esqueci a senha</a><br>
-            <br><a class="dropdown-item btn btn-dark active" href="cadastro.php">Cadastrar-se</a>
+            <br><a class="dropdown-item btn btn-dark active" href="cad.php">Cadastrar-se</a>
         </div>
       </div>
     </div>
