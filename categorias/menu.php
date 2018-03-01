@@ -45,12 +45,25 @@
                   <input type="text" name="search" placeholder="Pesquisar">
                </form>
             </div>
-            <div class="user">
-               <span class="traco"></span>    
+             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
                <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
-               <a  href="cadastro.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>
-               <a  href="favoritos.php"><i class="far fa-heart" style="color: #000;"></i></a>
-               <a  href="carrinho.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
+                   <?php
+                     if (empty($_SESSION['email'])){
+                        echo "Entre ou <p>Cadastre-se</p>";
+                     }else{
+                        echo "$usuario";
+                        }   
+                   ?>
+               </span>  
+            <div class="user"> 
+            <?php 
+              if(isset($_SESSION['usuario'])){
+               ?>    
+               <a  href="logout.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>a>
+            <?php
+               }
+            ?>  
+               <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
             <li id="respons" class="nav-item">
                <a class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" href="">Login</a>

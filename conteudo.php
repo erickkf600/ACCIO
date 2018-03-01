@@ -98,7 +98,7 @@
          <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
          <div class="container text-center">  
          <div class="row sm-8 mt-4" id="prop">
-            <iframe src="img/promocao/banner.gif" width="100%" height="200" frameBorder="0"></iframe>
+            <iframe src="img/promocao/accio.gif" width="990" height="164" frameBorder="0"></iframe>
          </div>
          </div>
 
