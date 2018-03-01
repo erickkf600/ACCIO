@@ -1,19 +1,22 @@
 <?php 
-    $email = $_POST['email'];
-	$senha = md5(string_tag(($_POST['senha'])));
-
+    session_start();
+	if(isset($_COOKIE['email']) or isset($_SESSION['email'])){
+		if(isset($_SESSION['email'])){
+			$email = $_SESSION['email'];
+		}
+		if(isset($_COOKIE['email'])){
+			$email = $_COOKIE['email'];
+		}
+	}else{
+		header("Location: index.php");
+	}
 	include "banco.php";
 	$query = "select * from login where email = '$email' and senha = '$senha' limit 1";
-	$consulta = mysqli_query($con,$query);
-	$total = mysqli_num_rows($consulta);
-	if($total == 0){
-		header("Location:index.php");
+	$consulta = mysqli_query($con, $query);
+	 
+	while($login = mysqli_fetch_array($consulta)){
+		$nome = $login['usuario'];
 	}
-	while ($email=mysqli_fetch_assoc($consulta)){
-		$email=$email['email'];
-	}
-	session_start();
-		$_SESSION['email']=$email;
-		$_SESSION['senha']=$senha;
-	header("Location:confere.php");
+	header("Location:index.php");
+
 ?>

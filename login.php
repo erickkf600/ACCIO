@@ -5,7 +5,7 @@
           <h4 class="modal-title">Entre com a sua conta</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <form method="post" action="log.php">
+        <form method="post" action="resposta.php">
         <div class="modal-body">
            <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
@@ -16,6 +16,9 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="senha">
             </div>
               <button type="submit" class="btn btn-dark btn-block">Login</button>
+              <label>
+                <input type="checkbox" name="conectar">Manter Conectado
+              </label>
             </div>
         </form>
         <div class="modal-footer">

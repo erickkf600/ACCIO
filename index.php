@@ -1,6 +1,6 @@
 <?php
-   include "login.php";
-
+  include "login.php";
+session_start();
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -16,9 +16,11 @@
       <link rel="stylesheet" href="css/logo/docs.theme.min.css">
       <link rel="stylesheet" href="css/logos/owl.carousel.min.css">
       <link rel="stylesheet" href="css/logos/owl.theme.default.min.css">
+      <link rel="shortcut icon" href="icone/nasa.png" type="image/x-icon" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="js/jquery.min.js"></script>
       <script src="js/owl.carousel.js"></script> 
+      <title>ACCIO</title>
    </head>
    <body style="background-color: #efefef;">
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
@@ -41,18 +43,23 @@
             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
                <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
                    <?php
-                     if (empty($_SESSION['email'])){
+                     if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
                         echo "Entre ou <p>Cadastre-se</p>";
                      }else{
-                        echo "$usuario";
-                        }   
+                        if(isset($_SESSION['email'])){
+                           $email = $_SESSION['email'];
+                        }else{
+                           $email = $_COOKIE['email'];
+                        }
+                        echo "$email";
+                     }   
                    ?>
-               </span>  
+               </span> 
             <div class="user"> 
             <?php 
-              if(isset($_SESSION['usuario'])){
+              if(isset($_SESSION['email']) or isset($_COOKIE['email'])){
                ?>    
-               <a  href="logout.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>a>
+               <a  href="destroys.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>
             <?php
                }
             ?>  

@@ -26,20 +26,20 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3>Intitucional</h3>
                     <ul>
-                        <li> <a href="#">Quem Somos</a> </li>
+                        <li> <a href="../../sobre.php">Quem Somos</a> </li>
                         <li> <a data-toggle="modal" data-target="#local" href="#">Localização</a></li>
-                        <li> <a href="#">Politica de Privacidade</a> </li>
-                        <li> <a href="#">Politicas do Site</a> </li>
+                        <li> <a href="../../">Politica de Privacidade</a> </li>
+                        <li> <a href="../../">Politicas do Site</a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3>Suporte</h3>
                     <ul>
-                        <li> <a href="#">Como Comprar</a> </li>
-                        <li> <a href="#">Entrega</a> </li>
-                        <li> <a href="pagamentos.php">Formas de Pagamento</a> </li>
-                        <li> <a href="#">Garantia</a> </li>
-                        <li> <a href="#">Troca e Devolução</a> </li>
+                        <li> <a href="../../">Como Comprar</a> </li>
+                        <li> <a href="../../">Entrega</a> </li>
+                        <li> <a href="../../pagamentos.php">Formas de Pagamento</a> </li>
+                        <li> <a href="../../">Garantia</a> </li>
+                        <li> <a href="../../">Troca e Devolução</a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
@@ -71,18 +71,17 @@
     <!--/.footer-->
     
     <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Copyright © ACCIO - 2018. All right reserved. </p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                	<li><i class="fab fa-cc-visa"></i></li>
-                    <li><i class="fab fa-cc-mastercard"></i></li>
-                    <li><i class="fas fa-barcode fa-lg"></i></li>
-                    <li><i class="fab fa-cc-paypal"></i></li>
-                </ul> 
+        <div class="container pb-2">
+                <div class="pull-right" style="font-size:1.5em;">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fas fa-barcode"></i>
+                    <i class="fab fa-paypal"></i>
+                </div>
+            <p class="text-center"> Copyright © ACCIO - 2018. All right reserved. </p>
+
             </div>
         </div>
-    </div>
 </footer>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>

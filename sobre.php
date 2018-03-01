@@ -150,18 +150,11 @@
       <div class="container">
     
     <div class="col-sm-12 text-left"> 
-      <h4 style="padding-bottom: 5%" >FORMAS DE PAGAMENTO</h4>
-        <b class="text-danger">BOLETO BANCÁRIO</b>
-      <p>Através do boleto, o cliente tem a opção de efetuar o pagamento tanto em bancos, quanto em agencias lotéricas, boletos caem apenas no dia útil seguinte ao pagamento, lembrando que pagamentos efetuados em fins de semana ou feriados tem computação pelo banco apenas no dia útil seguinte, compensação apenas no segundo dia útil.</p>
+      <h4 style="padding-bottom: 5%" >QUEM SOMOS</h4>
+      <p>Fundada no ano de 2018, a ACCIO é uma empresa que trabalha com os mais variados produtos, atuando principalmente no setor de informática e equipamentos eletrônicos em geral, área bastante competitiva e em constante crescimento, onde qualidade, variedade, garantia e eficiência são critérios importantíssimos para total satisfação, confiança e preferência de nossos consumidores.</p>
 
-      <b class="text-danger">PARCELAMENTO</b> 
-      <p>Caso deseje parcelar sua compra, trabalhamos com o Paypal, onde o cliente pode usar seu cartão de crédito. Esta modalidade esta sujeita a analise e confirmação de dados, evitando assim possíveis fraudes e qualquer risco a suas informações. Para tal analise existe um prazo de 48h uteis, confirmação de dados via telefone podem ser necessárias.</p>
-      <hr>
-      <h3 class="text-danger">Lembre-se</h3>
-      <b>Cada forma de pagamento tem um prazo de confirmação.
-    Fique atento aos prazos solicitados pelas devidas instituições financeiras responsáveis.</b>
-
-    
+      <p>Procuramos acima de tudo oferecer o que há de melhor, os melhores fornecedores, os mais atualizados produtos, o mais atencioso dos atendimentos, juntamente com os preços mais competitivos e atraentes do mercado para que nosso público encontre não apenas variedade e qualidade, mas também uma empresa que se preocupa com a felicidade e total satisfação de seus clientes e por que não, amigos!</p>
+      <hr>    
     </div>
 
   </div>

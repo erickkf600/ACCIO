@@ -12,7 +12,6 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3>Categorias</h3>
                     <ul>
-                        <li> <a href="celulares.php">Smartphones</a> </li>
                         <li> <a href="informatica.php">Informática</a> </li>
                         <li> <a href="eletronicos.php">Eletrônicos</a> </li>
                         <li> <a href="games.php">Games</a> </li>
@@ -23,7 +22,7 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3>Intitucional</h3>
                     <ul>
-                        <li> <a href="#">Quem Somos</a> </li>
+                        <li> <a href="sobre.php">Quem Somos</a> </li>
                         <li> <a data-toggle="modal" data-target="#local" href="#">Localização</a></li>
                         <li> <a href="#">Politica de Privacidade</a> </li>
                         <li> <a href="#">Politicas do Site</a> </li>

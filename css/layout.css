@@ -1,6 +1,10 @@
 body{
   background-color: #F0F1F5;
 }
+#link{
+  color: #000;
+  text-decoration:none;
+}
 .dropdown{
     padding:0px 20px;
     text-align: center;
@@ -67,6 +71,10 @@ display: none;
 #ordenar{
  margin-left: 30%;
  padding-top: 10%;
+}
+
+#login{
+  display: none;
 }
 
 .search{
@@ -140,7 +148,26 @@ display: none;
   background-color: #555;
 }
 
-    /*Conteudo*/
 
+
+/******************************MENU DA PAGINA PERFIL*************************/
+
+div.scrollmenu {
+    background-color: #c4c4c4;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color:#000;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #777;
+}
 
 

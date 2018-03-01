@@ -1,6 +1,7 @@
 <?php
-   include "../../login.php";
-   ?>
+  include "../../login.php";
+session_start();
+?>
 
 <!doctype html>
 <html lang="pt-br">
@@ -47,22 +48,27 @@
             </div>
              <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
                <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
-                   <?php
-                     if (empty($_SESSION['email'])){
+                  <?php
+                     if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
                         echo "Entre ou <p>Cadastre-se</p>";
                      }else{
-                        echo "$usuario";
-                        }   
+                        if(isset($_SESSION['email'])){
+                           $email = $_SESSION['email'];
+                        }else{
+                           $email = $_COOKIE['email'];
+                        }
+                        echo "$email";
+                     }   
                    ?>
-               </span>  
+               </span> 
             <div class="user"> 
             <?php 
-              if(isset($_SESSION['usuario'])){
+              if(isset($_SESSION['email']) or isset($_COOKIE['email'])){
                ?>    
-               <a  href="logout.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>a>
+               <a  href="destroys.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>
             <?php
                }
-            ?>  
+            ?> 
                <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
             <li id="respons" class="nav-item">
@@ -84,20 +90,20 @@
             <li class="nav-item dropdown">
                <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">INFORMÁTICA</a>           
                <div class="dropdown-menu">
-                  <a class="dropdown-item btn-dark" href="categorias/informatica/hardwere.php">Hardwere</a>
-                  <a class="dropdown-item btn-dark" href="categorias/informatica/perifericos.php">Perifericos</a>
-                  <a class="dropdown-item btn-dark" href="categorias/informatica/computadores.php">Computadores</a>
-                  <a class="dropdown-item btn-dark" href="categorias/informatica/notebooks.php">Notebooks</a>
-                  <a class="dropdown-item btn-dark" href="categorias/informatica/acessorios.php">Acessórios</a>
+                  <a class="dropdown-item btn-dark" href="hardwere.php">Hardwere</a>
+                  <a class="dropdown-item btn-dark" href="perifericos.php">Perifericos</a>
+                  <a class="dropdown-item btn-dark" href="computadores.php">Computadores</a>
+                  <a class="dropdown-item btn-dark" href="notebooks.php">Notebooks</a>
+                  <a class="dropdown-item btn-dark" href="acessorios.php">Acessórios</a>
                </div>
             </li>
             <li class="nav-item dropdown">
                <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">ELETRÔNICOS</a>           
                <div class="dropdown-menu">
-                  <a class="dropdown-item btn-dark" href="categorias/eletronicos/smartphones.php">Smartphones</a>
-                  <a class="dropdown-item btn-dark" href="categorias/eletronicos/smatwatches.php">Smartwatches</a>
-                  <a class="dropdown-item btn-dark" href="categorias/eletronicos/drones.php">Drones</a>
-                  <a class="dropdown-item btn-dark" href="categorias/eletronicos/componetes.php">Componentes</a>
+                  <a class="dropdown-item btn-dark" href="smartphones.php">Smartphones</a>
+                  <a class="dropdown-item btn-dark" href="smatwatches.php">Smartwatches</a>
+                  <a class="dropdown-item btn-dark" href="drones.php">Drones</a>
+                  <a class="dropdown-item btn-dark" href="componetes.php">Componentes</a>
                </div>
             </li>
             <li class="nav-item dropdown">

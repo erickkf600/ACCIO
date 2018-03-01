@@ -14,11 +14,11 @@
 
   
 </head>
-<header class="btn btn-warning" style="width: 100%;">
-  <a href="index.php">
-      <img class="logo" src="css/logo.png" alt="logo"></a> 
-</header>
-<body>
+    <a href="index.php"><header class="btn btn-warning" style="width: 100%;">
+  
+      <img class="logo" src="css/logo.png" alt="logo"> 
+</header></a>
+<body style="background-image:url(fundo2.jpg);">
 
   <!-- MultiStep Form -->
 <div class="row">
