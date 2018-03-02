@@ -43,10 +43,7 @@ session_start();
                 <input class="form-control" id="myInput" type="text" placeholder="Search..">
               </div>    
             </div>  
-
-
             <div class="col-md-3">
-              
         <a href="add-item.php" class="btn btn-dark pull-right ml-5">Novo Item</a>
         </div>
            </div>

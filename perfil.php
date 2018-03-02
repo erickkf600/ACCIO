@@ -1,6 +1,6 @@
 <?php
   include "login.php";
-session_start();
+ session_start();
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -44,7 +44,7 @@ session_start();
                <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
                    <?php
                      if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
-                        echo "Entre ou <p>Cadastre-se</p>";
+                        echo "";
                      }else{
                         if(isset($_SESSION['email'])){
                            $email = $_SESSION['email'];
@@ -156,12 +156,10 @@ session_start();
           <a class="nav-link" data-toggle="pill" href="#menu1">INFORMAÇÕES DA CONTA</a>
           <a class="nav-link" data-toggle="pill" href="#menu2"">MEUS PEDIDOS</a>
       </div>
-
-  <!-- Tab panes -->
-  <div class="tab-content text-center">
-    <div id="home" class="container tab-pane active"><br>
+    <div class="tab-content text-center">
+     <div id="home" class="container tab-pane active"><br>
       <h3>Você Tem <?php echo "0" ?> Itens em seu Carrinho</h3>
-      <a href="" style="text-decoration: none;"><p>Que tal ir as compras?</p></a>
+      <a href="index.php" style="text-decoration: none;"><p>Que tal ir as compras?</p></a>
       <div class="container">     
   <table class="table table-hover">
     <thead>
@@ -188,18 +186,17 @@ session_start();
     <div id="menu1" class="container tab-pane fade"><br>
       <h3>Informações de sua conta</h3>
       <div class="container text-left col-md-8">
-  <form>
+  <form method="post" action="resposta1.php">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="senha">
     </div>
   </div>
-    
   </div>
   <button type="submit" class="btn btn-primary">Atualizar</button>
 </form>
@@ -232,8 +229,7 @@ session_start();
     </div>
   </div>
 </div>
-
-   <hr>
+  <hr>
    </div>  
    <footer>
       <?php

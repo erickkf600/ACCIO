@@ -1,7 +1,7 @@
 <?php 
 	$email = $_POST['email'];
 	$senha = md5($_POST['senha']);
-	
+
 	include "banco.php";
 
 	$query = "select * from login where email = '$email' and senha = '$senha' limit 1";
@@ -14,12 +14,11 @@
 		if(empty($_POST['conectar'])){
 			session_start();
 			$_SESSION['email'] = $email;
-			$_SESSION['adm']   = $login['$adm'];
 		}else{
-			setcookie("email", $email,"adm",$adm, time()+60*2 );
+			setcookie("email", $email, time()+60*2 );
 		}
 	}
 
-header("Location:index.php");
+header("Location:perfil.php");
 
 ?>

@@ -44,7 +44,7 @@ session_start();
                <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
                    <?php
                      if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
-                        echo "Entre ou <p>Cadastre-se</p>";
+                        echo "";
                      }else{
                         if(isset($_SESSION['email'])){
                            $email = $_SESSION['email'];
@@ -52,7 +52,8 @@ session_start();
                            $email = $_COOKIE['email'];
                         }
                         echo "$email";
-                     }   
+                     }
+                        
                    ?>
                </span> 
             <div class="user"> 
