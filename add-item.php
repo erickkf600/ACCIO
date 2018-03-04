@@ -22,51 +22,50 @@
   
   <form method="post" action="add.php">
     <div class="row">
-      <div class="form-group col-md-4">
-        <label for="exampleInputEmail1">ID</label>
-        <input type="number" min="0" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
-      </div>
-    <div class="form-group col-md-4">
+       <div class="form-group col-md-4">
         <label for="exampleInputEmail1">Codigo do Produto</label>
-        <input type="number" min="0" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type="number" min="0" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="codProd">
       </div>
     <div class="form-group col-md-4">
         <label for="exampleInputEmail1">Categoria</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="categoria">
       </div>
   </div>
   
   <div class="row">
       <div class="form-group col-md-3">
         <label for="exampleInputEmail1">Tipo</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="tipo">
       </div>
     <div class="form-group col-md-3">
         <label for="exampleInputEmail1">Nome</label>
-        <input type=text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type=text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="nome">
       </div>
     <div class="form-group col-md-3">
         <label for="exampleInputEmail1">Modelo</label>
-        <input type=text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type=text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="modelo">
       </div>
     <div class="form-group col-md-3">
         <label for="exampleInputEmail1">Fabricante</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="fabricante">
       </div>
   </div>
   
   <div class="row">
       <div class="form-group col-md-6">
         <label for="exampleInputEmail1">Quantidade</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="quantidade">
       </div>
     <div class="form-group col-md-6">
         <label for="exampleInputEmail1">Preço</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor">
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite o valor" name="name">
+      </div>
+      <div class="row">
+            <div class="col-xs-12 col-md-3 text-center">
+              <img src="perfil/perfil.jpg" class="fotoPerfil" />
+              <a href="mudafoto.php">Alterar foto</a>
       </div>
   </div>
-
-  
   <hr>
   
   <div class="row">

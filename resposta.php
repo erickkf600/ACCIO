@@ -14,7 +14,7 @@
 		if(empty($_POST['conectar'])){
 			session_start();
 			$_SESSION['email'] = $email;
-			$_SESSION['adm']   = $login['$adm'];
+			$_SESSION['adm']   = $adm;
 		}else{
 			setcookie("email", $email,"adm",$adm, time()+60*2 );
 		}

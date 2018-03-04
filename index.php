@@ -48,12 +48,13 @@ session_start();
                      }else{
                         if(isset($_SESSION['email'])){
                            $email = $_SESSION['email'];
-                        }else{
+                          }else{
                            $email = $_COOKIE['email'];
+                           
                         }
                         echo "$email";
                      }
-                        
+                     
                    ?>
                </span> 
             <div class="user"> 
