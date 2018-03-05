@@ -40,6 +40,7 @@
                         <li> <a href="../../pagamentos.php">Formas de Pagamento</a> </li>
                         <li> <a href="../../">Garantia</a> </li>
                         <li> <a href="../../">Troca e Devolução</a> </li>
+                        <li> <a href="../../contato.php">Fale Conosco</a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">

@@ -26,5 +26,5 @@
 	$_SESSION['nome'] = $nome;
 	$_SESSION['email'] = $email;
 
-	header("Location: index.php");
+	header("Location: perfil.php");
 ?>

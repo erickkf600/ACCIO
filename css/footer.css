@@ -1,5 +1,5 @@
 			/*Barra de Pesquisa*/
-input[type=text] {
+input[type=search] {
     width: 100%;
     background-color: #000;
     color: #000;
@@ -16,14 +16,14 @@ input[type=text] {
     float: right; 
 }
 
-input[type=text]:focus {
+input[type=search]:focus {
     width: 250%;
     background-color: #000;
     color: #fff;
 }
 
 @media only screen and (max-width: 991px) {
-	input[type=text] {
+	input[type=search] {
     width: 100%;
 	} 
 }
@@ -38,7 +38,7 @@ input[type=text]:focus {
 	display: block;
 }
 .footer {
-	background: #EDEFF1;
+	background: #E3E3E3;
 	height: auto;
 	padding-bottom: 30px;
 	position: relative;
@@ -133,12 +133,12 @@ input[type=text]:focus {
 	background: #c4c4c4;
 }
 .social li a i {
-	font-size: 16px;
+	font-size: 20px;
 	margin: 0 0 0 5px;
 	color: #EDEFF1 !important;
 }
 .footer-bottom {
-	background: #E3E3E3;
+	background: #d6d6d6;
 	border-top: 1px solid #DDDDDD;
 }
 .footer-bottom p.pull-left {

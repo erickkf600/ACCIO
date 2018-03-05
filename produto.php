@@ -39,14 +39,20 @@ session_start();
             </ul>
             <div>
                <form class="search">
-                  <input type="text" name="search" placeholder="Pesquisar">
+                  <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
-            <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
-            <?php
+               <div class="dropdown">
+            <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
+            <div class="dropdown-menu">
+              <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
+              <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
+            </div>
+          </div>      
+                   <?php
                      if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
-                        echo "Entre ou <p>Cadastre-se</p>";
+                        echo "";
                      }else{
                         if(isset($_SESSION['email'])){
                            $email = $_SESSION['email'];
@@ -54,7 +60,8 @@ session_start();
                            $email = $_COOKIE['email'];
                         }
                         echo "$email";
-                     }   
+                     }
+                        
                    ?>
                </span> 
             <div class="user"> 
@@ -75,7 +82,7 @@ session_start();
             </li>
             <div class="pesq">
                <form>
-                  <input type="text" name="search" placeholder="Pesquisar">
+                  <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
          </div>

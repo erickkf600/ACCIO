@@ -1,5 +1,5 @@
 <?php
-    include "includes/localizacao.inc"
+    include "includes/localizacao.inc";
 ?>
 
 
@@ -36,6 +36,7 @@
                         <li> <a href="pagamentos.php">Formas de Pagamento</a> </li>
                         <li> <a href="#">Garantia</a> </li>
                         <li> <a href="#">Troca e Devolução</a> </li>
+                        <li> <a href="contato.php">Fale Conosco</a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
@@ -46,10 +47,12 @@
                     <h3>Novidades</h3>
                     <ul>
                         <li>
-                            <div class="input-append newsletter-box text-center">
-                                <input type="email" class="full text-center" placeholder="Email">
-                                <button class="btn  bg-gray" type="button">Cadastrar</button>
-                            </div>
+                            <form method="post" action="subscribe.php">
+                                <div class="input-append newsletter-box text-center">
+                                    <input type="email" class="full text-center" placeholder="Email">
+                                    <button class="btn  btn-dark" type="submit">Cadastrar</button>
+                                </div>
+                            </form>
                         </li>
                     </ul>
                     <ul class="social">

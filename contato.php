@@ -22,14 +22,11 @@ session_start();
       <script src="js/owl.carousel.js"></script> 
       <title>ACCIO</title>
    </head>
-   <body style="background-color: #efefef;">
+   <body style="background-image: url(fundo2.jpg);">
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
       <nav class="navbar navbar-expand-lg navbar-danger bg-warning">
          <a href="index.php">
          <img class="navbar-brand" src="css/logo.png" alt="logo"></a>
-
-          <a  href="perfil.php" class="navbar-toggler"><i class="fas fa-shopping-cart fa-lg" style="color: #000;"></i></a>
-
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span><i class="fas fa-bars"></i></span>
          </button>
@@ -40,32 +37,15 @@ session_start();
             </ul>
             <div>
                <form class="search">
-                  <input type="search" name="search" placeholder="Pesquisar">
+                  <input type="text" name="search" placeholder="Pesquisar">
                </form>
             </div>
             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
                <div class="dropdown">
 				    <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
 				    <div class="dropdown-menu">
-                 <?php 
-                    if(empty($_SESSION['email']) and empty($_COOKIE['email'])){                    
-                  ?> 
 				      <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
-                  <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
-                  <?php 
-                     }else{
-                        if(isset($_SESSION['email'])){
-                           $email = $_SESSION['email'];
-                        }else{
-                           $email = $_COOKIE['email'];
-                        }
-                   ?>
-                  
-                  <a class="dropdown-item btn-dark" href="perfil.php#menu1">Minha Conta</a>
-                  <a class="dropdown-item btn-dark" href="perfil.php#menu2">Meus pedidos</a>
-                  <?php 
-                  }
-                   ?>
+				      <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
 				    </div>
 				  </div>      
                    <?php
@@ -82,9 +62,7 @@ session_start();
                         
                    ?>
                </span> 
-               <!-- Menu em Mobile -->
             <div class="user"> 
-
             <?php 
               if(isset($_SESSION['email']) or isset($_COOKIE['email'])){
                ?>    
@@ -92,38 +70,17 @@ session_start();
             <?php
                }
             ?>  
-               <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
+               <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
-            </li>
-               <?php              
-                if (empty($_SESSION['email']) and empty($_COOKIE['email'])){ 
-               ?>
             <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="">Login</a>
+               <a class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" href="">Login</a>
              </li>
             <li id="respons" class="nav-item">
                <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
             </li>
-            <?php 
-            }
-             ?>
-
-             <?php              
-                if (isset($_SESSION['email']) and isset($_COOKIE['email'])){ 
-               ?>
-
-               <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="">Minha Conta</a>
-             </li>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="cadastro.php">Meus pedidos</a>
-            </li>
-            <?php 
-            }
-             ?>
             <div class="pesq">
                <form>
-                  <input type="search" name="search" placeholder="Pesquisar">
+                  <input type="text" name="search" placeholder="Pesquisar">
                </form>
             </div>
          </div>
@@ -200,9 +157,40 @@ session_start();
             </div>
          </div>
       </div>
-         <?php
-         include "conteudo.php"
-         ?>
+         <div class="container-fluid">
+  		<h2>Contato</h2>  
+  			<h5>Para qualquer questão, sugestão ou crítica utilize o formulário abaixo</h5>
+
+  			<form class="col-sm-7"  method="post" action="mensagem.php">  
+  				<div class="form-group">
+			      <label for="exampleInputName1">Nome</label>
+			      <input required type="name" name="nome" class="form-control" placeholder="Digite seu nome">
+			    </div>
+			    
+			    <div class="form-group">
+			      <label for="exampleInputEmail1">E-mail</label>
+			      <input required type="email" name="email" class="form-control" placeholder="Digite seu email">
+			    </div>
+			    
+			    <div class="form-group">
+			      <label>Assunto</label>
+			      <select class="form-control" name="select" ">
+			      	<option disabled selected>Selecione</option>
+			        <option>Criticas</option>
+			        <option>Sugestões</option>
+			        <option>Duvidas</option>
+			        <option>Outros</option>
+			      </select>
+			    </div>
+			    
+			    <div class="form-group">
+			      <label for="exampleTextarea">Sua messagem</label>
+			      <textarea class="form-control" rows="5" type="text" name="mensagem"></textarea>
+			    </div>
+
+			    <button type="submit" class="btn btn-dark">Enviar</button>
+
+			</form>
    <hr>
    </div>  
    <footer>

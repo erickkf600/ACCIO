@@ -1,24 +1,19 @@
 <?php 
-	$email = $_POST['email'];
+	$usuario = strip_tags($_POST['usuario']);
+	$email = strip_tags($_POST['email']);
 	$senha = md5($_POST['senha']);
+	$nome = strip_tags($_POST['nome']);
+	$endereco = strip_tags($_POST['endereco']);
+	$cep = strip_tags($_POST['cep']);
+	$telefoneFixo = strip_tags($_POST['telresid']);
+	$telefoneCel = strip_tags($_POST['cel']);
 
 	include "banco.php";
 
-	$query = "select * from login where email = '$email' and senha = '$senha' limit 1";
+	$query = "insert into login (usuario, email, senha, nome, endereco, cep, telresid, cel)";
 
-	$consulta = mysqli_query($con, $query);
+	mysqli_query($con, $query);
 
-	$total = mysqli_num_rows($consulta);
-
-	if($total == 1){
-		if(empty($_POST['conectar'])){
-			session_start();
-			$_SESSION['email'] = $email;
-		}else{
-			setcookie("email", $email, time()+60*2 );
-		}
-	}
-
-header("Location:perfil.php");
+	header("Location:perfil.php");
 
 ?>

@@ -102,13 +102,7 @@
          </div>
          </div>
 
-         <div class="container mt-4">
-            <div class="row">
-               <div class="col-md-12 text-center text-secondary">
-                  <h2>Confira Também</h2>
-               </div>
-            </div>
-         </div>
+
 
          <div class="container text-center  mt-3">
             <div class="tz-gallery"> 

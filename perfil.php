@@ -37,11 +37,34 @@
             </ul>
             <div>
                <form class="search">
-                  <input type="text" name="search" placeholder="Pesquisar">
+                  <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
-               <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
+               <div class="dropdown">
+				    <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
+				    <div class="dropdown-menu">
+                 <?php 
+                    if(empty($_SESSION['email']) and empty($_COOKIE['email'])){                    
+                  ?> 
+				      <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
+                  <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
+                  <?php 
+                     }else{
+                        if(isset($_SESSION['email'])){
+                           $email = $_SESSION['email'];
+                        }else{
+                           $email = $_COOKIE['email'];
+                        }
+                   ?>
+                  
+                  <a class="dropdown-item btn-dark" href="perfil.php#menu1">Minha Conta</a>
+                  <a class="dropdown-item btn-dark" href="perfil.php#menu2">Meus pedidos</a>
+                  <?php 
+                  }
+                   ?>
+				    </div>
+				  </div>      
                    <?php
                      if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
                         echo "";
@@ -52,10 +75,13 @@
                            $email = $_COOKIE['email'];
                         }
                         echo "$email";
-                     }   
+                     }
+                        
                    ?>
                </span> 
+               <!-- Menu em Mobile -->
             <div class="user"> 
+
             <?php 
               if(isset($_SESSION['email']) or isset($_COOKIE['email'])){
                ?>    
@@ -65,15 +91,36 @@
             ?>  
                <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
+            </li>
+               <?php              
+                if (empty($_SESSION['email']) and empty($_COOKIE['email'])){ 
+               ?>
             <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" href="">Login</a>
+               <a class="btn btn-dark btn-block" href="">Login</a>
              </li>
             <li id="respons" class="nav-item">
                <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
             </li>
+            <?php 
+            }
+             ?>
+
+             <?php              
+                if (isset($_SESSION['email']) and isset($_COOKIE['email'])){ 
+               ?>
+
+               <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="">Minha Conta</a>
+             </li>
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="cadastro.php">Meus pedidos</a>
+            </li>
+            <?php 
+            }
+             ?>
             <div class="pesq">
                <form>
-                  <input type="text" name="search" placeholder="Pesquisar">
+                  <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
          </div>
@@ -150,14 +197,13 @@
             </div>
          </div>
       </div>
-
-      <div class="nav-pills nav justify-content-center scrollmenu">
+      <div id="myTab" class="nav-pills nav justify-content-center scrollmenu">
           <a class="nav-link active" data-toggle="pill" href="#home">CARRINHO</a>
           <a class="nav-link" data-toggle="pill" href="#menu1">INFORMAÇÕES DA CONTA</a>
-          <a class="nav-link" data-toggle="pill" href="#menu2"">MEUS PEDIDOS</a>
+          <a class="nav-link" data-toggle="pill" href="#menu2">MEUS PEDIDOS</a>
       </div>
     <div class="tab-content text-center">
-     <div id="home" class="container tab-pane active"><br>
+     <div id="home" class="container active tab-pane" style="margin-bottom: 12%;"><br>
       <h3>Você Tem <?php echo "0" ?> Itens em seu Carrinho</h3>
       <a href="index.php" style="text-decoration: none;"><p>Que tal ir as compras?</p></a>
       <div class="container">     
@@ -177,32 +223,68 @@
         <td><?php echo "R$ 000,00" ?></td>
         <td><?php echo "uuuuuuuuu" ?></td>
         <td><?php echo "00" ?></td>
-        <td><a href='excluir.php?id=$idc'><i class="fas fa-times-circle"></i></a></td>
+        <td><a href='excluir.php?id=$idc'><i class="fas fa-trash-alt fa-lg"></i></a></td>
       </tr>
      </tbody>
     </table> 
      </div> 
 </div> 
+
     <div id="menu1" class="container tab-pane fade"><br>
       <h3>Informações de sua conta</h3>
       <div class="container text-left col-md-8">
   <form method="post" action="resposta1.php">
   <div class="form-row">
     <div class="form-group col-md-6">
+      <label for="inputEmail4">Usuário</label>
+      <input type="text" class="form-control" id="inputUser4" name="email" value="<?php echo "$usuario" ?>">
+    </div>
+
+    <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+      <input type="email" class="form-control" id="inputEmail4" name="email" value="<?php echo "$email" ?>">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="senha">
+      <input type="password" class="form-control" id="inputPassword4" name="senha" value="<?php echo "$senha" ?>">
     </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Nome</label>
+      <input type="name" class="form-control" id="inputName4" name="nome" value="<?php echo "$nome" ?>">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputText4">Endereço</label>
+      <input type="text" class="form-control" id="iinputText4" name="endereco" value="<?php echo "$endereco" ?>">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputText4">CEP</label>
+      <input type="text" class="form-control" id="iinputText4" name="cep" value="<?php echo "$cep" ?>">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputText4">Telefone Fixo</label>
+      <input type="text" class="form-control" id="iinputText4" name="telresid" value="<?php echo "$telefoneFixo" ?>">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputText4">Celular</label>
+      <input type="text" class="form-control" id="iinputText4" name="cel" value="<?php echo "$telefoneCel" ?>">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label  for="inputText4">CPF</label>
+      <input readonly type="text" class="form-control" id="iinputText4" value="<?php echo "$cpf" ?>">
+    </div>
+
   </div>
   </div>
-  <button type="submit" class="btn btn-primary">Atualizar</button>
+  <button type="submit" class="btn btn-dark">Atualizar</button>
 </form>
 </div>
 
-    <div id="menu2" class="container tab-pane fade"><br>
+    <div id="menu2" class="container tab-pane fade" style="margin-bottom: 14%;"><br>
       <h3>LISTAGEM DAS SUAS ÚLTIMAS COMPRAS</h3>
       <div class="container">     
   <table class="table table-hover">
@@ -236,6 +318,7 @@
          include "footer.inc";
          ?>
    </footer>
+
          <script type="text/javascript" src="js/index.js"></script>
          <script type="text/javascript" src="js/logos.js"></script>
          <script type="text/javascript" src="js/vitrine.js"></script>
@@ -243,5 +326,6 @@
          <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
    </body>
 </html>

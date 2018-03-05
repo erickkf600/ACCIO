@@ -113,6 +113,14 @@ function topFunction() {
 }
 
 
+	/***************Tabs***************/
+$(function() {
+    var hash = window.location.hash;
+
+    hash && $('a[href="' + hash + '"]').tab('show');
+});
+
+
 
 
 
