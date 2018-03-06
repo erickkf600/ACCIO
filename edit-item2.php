@@ -1,13 +1,12 @@
 <?php 
-	$id = ($_POST['id']);
-	$codprod = $_POST['codprod'];
-	$categoria = $_POST['categoria'];
-	$tipo = $_POST['tipo'];
-	$nomeprod = $_POST['nomeprod'];
-	$modelo = $_POST['modelo'];
+	$codprod   	= $_POST['codprod'];
+	$categoria 	= $_POST['categoria'];
+	$tipo      	= $_POST['tipo'];
+	$nomeprod  	= $_POST['nomeprod'];
+	$modelo    	= $_POST['modelo'];
 	$fabricante = $_POST['fabricante'];
 	$quantidade = $_POST['quantidade'];
-	$preco = $_POST['preco'];
+	$preco 		= $_POST['preco'];
 
 	include "banco.php";
 
