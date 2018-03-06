@@ -8,8 +8,113 @@
    </div>  
       </head>
       <body>
-         <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
-         <div class="container mt-4">
+              <!-- 1º Caropusel -->
+        <div class="container-fluid mt-5 mb-5">
+      <div class="row-equal">
+        <div class="large-12 columns">
+
+          <div class="owl-carousel owl-theme">
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/1.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Hardwere</p>
+            </a></div>
+
+             <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/2.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Perifericos</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/3.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Computadores</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/4.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Notebooks</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/5.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Acessórios</p>
+            </a></div>
+
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/6.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Smartphones</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/7.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Smartwatches</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/8.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Drones</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/9.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Componentes</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/10.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Consoles</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/11.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Jogos</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/12.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">HQs</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/13.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Mangás</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/14.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Livros</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/15.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">E-books</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/16.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Vestúario</p>
+            </a></div>
+
+
+             <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/17.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Calçados</p>
+            </a></div>
+
+            <a href="" style="text-decoration: none;"><div class="item">
+              <img src="img/categorias/18.jpg">
+              <p class="text-center text-dark" style="font-family: cursive;">Itens</p>
+            </a></div>
+
+          </div>
+
+        </div>
+      </div> 
+    </div>   
+    <!-- ************************* -->
+
+         <div class="container mt-4 mb-4">
             <div class="row">
                <div class="col-md-12 text-center text-secondary">
                   <h2>Ofertas em Destaque</h2>
@@ -102,7 +207,13 @@
          </div>
          </div>
 
-
+         <div class="container mt-4">
+            <div class="row">
+               <div class="col-md-12 text-center text-secondary">
+                  <h2>Novidades</h2>
+               </div>
+            </div>
+         </div>
 
          <div class="container text-center  mt-3">
             <div class="tz-gallery"> 

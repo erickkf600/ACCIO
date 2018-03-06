@@ -1,6 +1,7 @@
 $('.owl-carousel').owlCarousel({
               loop:true,
               center: true,
+              autoplay: 4000,
               margin:-750,
               nav:true,
               navText: [
@@ -15,7 +16,7 @@ $('.owl-carousel').owlCarousel({
               },
               1000:{
                   items:3,
-                  margin:50,
+                  margin:30,
                   autoWidth:true,
               },
               2000:{

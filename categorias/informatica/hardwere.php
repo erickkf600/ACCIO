@@ -11,7 +11,7 @@
   </ol>
 </nav>
 
-  <div class="container mt-3" style="border">
+  <div class="container mt-3">
   
     <div class="row">
   <div class="container gallery-container"> 
