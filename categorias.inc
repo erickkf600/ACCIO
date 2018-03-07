@@ -5,7 +5,7 @@
   </head>
 <body>
 <hr class="bg-danger" style="height:1px">
- <div class="container-fluid mt-5 mb-5">
+ <div class="container-fluid mt-4 mb-5" style="height: 12%;>
       <div class="row-equal">
 
           <div class="owl-carousel"  id="categorias">
