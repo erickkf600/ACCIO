@@ -5,7 +5,7 @@
       width: 100%;
       height: 70%;
   }
-  @media only screen and (max-width: 991px){
+  @media only screen and (max-width: 1024px){
     .carousel-inner img {
       width: 100%;
       height: 20%;
@@ -54,3 +54,8 @@
     <span><i class="far fa-caret-square-right fa-3x"></i></span>
   </a>
 </div>
+
+<?php 
+  include "categorias.inc";
+ ?> 
+

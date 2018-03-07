@@ -1,6 +1,6 @@
 <?php
-   include "login.php";
-
+  include "login.php";
+session_start();
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -15,16 +15,20 @@
       <link rel="stylesheet" href="css/vitrine/owl.theme.default.min.css">
       <link rel="stylesheet" href="css/logo/docs.theme.min.css">
       <link rel="stylesheet" href="css/logos/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/logos/owl.theme.default.min.css">
+      <link rel="shortcut icon" href="icone/nasa.png" type="image/x-icon" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="js/jquery.min.js"></script>
       <script src="js/owl.carousel.js"></script> 
+      <title>ACCIO</title>
    </head>
    <body style="background-color: #efefef;">
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
       <nav class="navbar navbar-expand-lg navbar-danger bg-warning">
          <a href="index.php">
          <img class="navbar-brand" src="css/logo.png" alt="logo"></a>
+
+          <a  href="perfil.php" class="navbar-toggler"><i class="fas fa-shopping-cart fa-lg" style="color: #000;"></i></a>
+
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span><i class="fas fa-bars"></i></span>
          </button>
@@ -35,38 +39,75 @@
             </ul>
             <div>
                <form class="search">
-                  <input type="text" name="search" placeholder="Pesquisar">
+                  <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
-               <i class="fas fa-user-circle" data-toggle="modal" data-target="#myModal" href="#"></i>        
-                   <?php
-                     if (empty($_SESSION['email'])){
-                        echo "Entre ou <p>Cadastre-se</p>";
+                <?php 
+                if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
+                 ?>  
+               <div class="dropdown">
+                <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
+                <div class="dropdown-menu"> 
+                  <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
+                  <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
+                  <?php 
                      }else{
-                        echo "$usuario";
-                        }   
+                        if(isset($_SESSION['email'])){
+                           $email = $_SESSION['email'];
+                        }else{
+                           $email = $_COOKIE['email'];
+                        }
                    ?>
-               </span>  
-            <div class="user"> 
-            <?php 
-              if(isset($_SESSION['usuario'])){
-               ?>    
-               <a  href="logout.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>a>
-            <?php
-               }
-            ?>  
-               <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
+                  <div class="dropdown">
+                     <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
+                  <div class="dropdown-menu" style="margin-left: 15%;">
+                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu1">Minha Conta</a>
+                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu2">Meus pedidos</a>
+                  <a class="dropdown-item btn-dark text-center" href="destroys.php">Sair</a>
+                  <?php 
+                  }
+                   ?>
+                </div>
+              </div>      
+               </span> 
+
+               <!-- Menu em Mobile -->
+            <div class="user">  
+               <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" href="">Login</a>
-             </li>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
             </li>
+
+               <?php              
+                if (empty($_SESSION['email']) and empty($_COOKIE['email'])){ 
+               ?>
+               <li id="respons" class="nav-item">
+                  <a class="btn btn-dark btn-block"  data-toggle="modal" data-target="#myModal" href="#">Login</a>
+                </li>
+               <li id="respons" class="nav-item">
+                  <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
+               </li>
+            <?php 
+            }else{
+             ?>
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="perfil.php#menu1">Minha Conta</a>
+             </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="perfil.php#menu2">Meus pedidos</a>
+            </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
+            </li>
+
+            <?php 
+            }
+             ?>
             <div class="pesq">
                <form>
-                  <input type="text" name="search" placeholder="Pesquisar">
+                  <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
          </div>

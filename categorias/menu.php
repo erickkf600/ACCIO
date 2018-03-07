@@ -1,5 +1,5 @@
 <?php
-  include "../../login.php";
+  include "../login.php";
 session_start();
 ?>
 
@@ -46,44 +46,69 @@ session_start();
                   <input type="search" name="search" placeholder="Pesquisar">
                </form>
             </div>
-            <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
+           <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
+                <?php 
+                if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
+                 ?>  
                <div class="dropdown">
                 <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu"> 
                   <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
-                  <a class="dropdown-item btn-dark" href="../../cadastro.php">Cadastrar-se</a>
-                </div>
-              </div>      
-                   <?php
-                     if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
-                        echo "";
+                  <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
+                  <?php 
                      }else{
                         if(isset($_SESSION['email'])){
                            $email = $_SESSION['email'];
                         }else{
                            $email = $_COOKIE['email'];
                         }
-                        echo "$email";
-                     }
-                        
                    ?>
-               </span>  
-            <div class="user"> 
-            <?php 
-              if(isset($_SESSION['email']) or isset($_COOKIE['email'])){
-               ?>    
-               <a  href="destroys.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>
-            <?php
-               }
-            ?> 
-               <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
+                  <div class="dropdown">
+                     <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
+                  <div class="dropdown-menu" style="margin-left: 15%;">
+                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu1">Minha Conta</a>
+                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu2">Meus pedidos</a>
+                  <a class="dropdown-item btn-dark text-center" href="destroys.php">Sair</a>
+                  <?php 
+                  }
+                   ?>
+                </div>
+              </div>      
+               </span> 
+
+               <!-- Menu em Mobile -->
+            <div class="user">  
+               <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" href="">Login</a>
             </li>
+
+               <?php              
+                if (empty($_SESSION['email']) and empty($_COOKIE['email'])){ 
+               ?>
+               <li id="respons" class="nav-item">
+                  <a class="btn btn-dark btn-block"  data-toggle="modal" data-target="#myModal" href="#">Login</a>
+                </li>
+               <li id="respons" class="nav-item">
+                  <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
+               </li>
+            <?php 
+            }else{
+             ?>
             <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
+               <a class="btn btn-dark btn-block" href="perfil.php#menu1">Minha Conta</a>
+             </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="perfil.php#menu2">Meus pedidos</a>
             </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
+            </li>
+
+            <?php 
+            }
+             ?>
             <div class="pesq">
                <form>
                   <input type="search" name="search" placeholder="Pesquisar">

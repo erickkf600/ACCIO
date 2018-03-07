@@ -4,7 +4,7 @@
  * Licensed under  ()
  */
  body{
- 	overflow-x:hidden;
+    overflow-x:hidden;
  }
 @media only screen and (max-width: 1000px){
     .owl-carousel{
@@ -16,30 +16,30 @@
 } 
 
 .owl-carousel,.owl-carousel .owl-item{
-	-webkit-tap-highlight-color:transparent;
-	position:relative; 
+    -webkit-tap-highlight-color:transparent;
+    position:relative; 
 }
 .owl-carousel{
-	position: relative;
+    position: relative;
     display: none;
     width: 100%;
-	}
+    }
 .owl-carousel .owl-stage{
-	position:relative;
-	-ms-touch-action:pan-Y;
-	-moz-backface-visibility:hidden;
-	}
+    position:relative;
+    -ms-touch-action:pan-Y;
+    -moz-backface-visibility:hidden;
+    }
 .owl-carousel .owl-stage:after{
-	content:".";
-	display:block;
-	clear:both;
-	visibility:hidden;
-	line-height:0;height:0;
-	}
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;height:0;
+    }
 .owl-carousel .owl-stage-outer{
-	position: relative;
+    position: relative;
     width: 100%;
-	}
+    }
 .owl-carousel .owl-item,.owl-carousel .owl-wrapper{
     -webkit-backface-visibility:hidden;
     -moz-backface-visibility:hidden;

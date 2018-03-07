@@ -41,13 +41,13 @@
                </form>
             </div>
             <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
+                <?php 
+                if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
+                 ?>  
                <div class="dropdown">
-				    <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
-				    <div class="dropdown-menu">
-                 <?php 
-                    if(empty($_SESSION['email']) and empty($_COOKIE['email'])){                    
-                  ?> 
-				      <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
+            <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
+            <div class="dropdown-menu"> 
+              <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
                   <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
                   <?php 
                      }else{
@@ -57,64 +57,49 @@
                            $email = $_COOKIE['email'];
                         }
                    ?>
-                  
-                  <a class="dropdown-item btn-dark" href="perfil.php#menu1">Minha Conta</a>
-                  <a class="dropdown-item btn-dark" href="perfil.php#menu2">Meus pedidos</a>
+                  <div class="dropdown">
+                     <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
+                  <div class="dropdown-menu" style="margin-left: 15%;">
+                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu1">Minha Conta</a>
+                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu2">Meus pedidos</a>
+                  <a class="dropdown-item btn-dark text-center" href="destroys.php">Sair</a>
                   <?php 
                   }
                    ?>
-				    </div>
-				  </div>      
-                   <?php
-                     if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
-                        echo "";
-                     }else{
-                        if(isset($_SESSION['email'])){
-                           $email = $_SESSION['email'];
-                        }else{
-                           $email = $_COOKIE['email'];
-                        }
-                        echo "$email";
-                     }
-                        
-                   ?>
+            </div>
+          </div>      
                </span> 
-               <!-- Menu em Mobile -->
-            <div class="user"> 
 
-            <?php 
-              if(isset($_SESSION['email']) or isset($_COOKIE['email'])){
-               ?>    
-               <a  href="destroys.php"><i class="fas fa-sign-in-alt" style="color: #000;"></i></a>
-            <?php
-               }
-            ?>  
-               <a  href="perfil.php"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
+               <!-- Menu em Mobile -->
+            <div class="user">  
+               <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
             </li>
+
                <?php              
                 if (empty($_SESSION['email']) and empty($_COOKIE['email'])){ 
                ?>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="">Login</a>
-             </li>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
-            </li>
+              <li id="respons" class="nav-item">
+                 <a class="btn btn-dark btn-block"  data-toggle="modal" data-target="#myModal" href="#">Login</a>
+               </li>
+              <li id="respons" class="nav-item">
+                 <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
+              </li>
             <?php 
-            }
+            }else{
              ?>
-
-             <?php              
-                if (isset($_SESSION['email']) and isset($_COOKIE['email'])){ 
-               ?>
-
-               <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="">Minha Conta</a>
-             </li>
             <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="cadastro.php">Meus pedidos</a>
+               <a class="btn btn-dark btn-block" href="perfil.php#menu1">Minha Conta</a>
+             </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="perfil.php#menu2">Meus pedidos</a>
             </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
+            </li>
+
             <?php 
             }
              ?>
@@ -198,7 +183,7 @@
          </div>
       </div>
       <div id="myTab" class="nav-pills nav justify-content-center scrollmenu">
-          <a class="nav-link active" data-toggle="pill" href="#home">CARRINHO</a>
+          <a class="nav-link active" data-toggle="pill" href="#home">CARRINHO</a> 
           <a class="nav-link" data-toggle="pill" href="#menu1">INFORMAÇÕES DA CONTA</a>
           <a class="nav-link" data-toggle="pill" href="#menu2">MEUS PEDIDOS</a>
       </div>

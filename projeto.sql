@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Fev-2018 às 16:01
+-- Generation Time: 06-Mar-2018 às 13:12
 -- Versão do servidor: 10.1.29-MariaDB
 -- PHP Version: 7.1.12
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
+  `usuario` varchar(40) NOT NULL,
   `cpf` varchar(12) NOT NULL,
   `email` varchar(30) NOT NULL,
   `senha` varchar(100) NOT NULL,
@@ -42,6 +43,15 @@ CREATE TABLE `login` (
   `telefoneFixo` varchar(30) NOT NULL,
   `telefoneCel` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `login`
+--
+
+INSERT INTO `login` (`id`, `nome`, `usuario`, `cpf`, `email`, `senha`, `dataNasc`, `endereco`, `cep`, `bairro`, `cidade`, `telefoneFixo`, `telefoneCel`) VALUES
+(2, 'alexande', 'junio', '2158161', 'junior@bn.com', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'rua z', 3151858, 'eden', 'sjm', '', ''),
+(3, 'erick', 'erickk', '186156', 'erickkf600@gmail.com', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'rua j', 1554148, 'edne', 'sjm', '22121', ''),
+(4, 'carlos', 'ins', '123456789', 'ch@bm.com', '202cb962ac59075b964b07152d234b70', '0000-00-00', 'rua h', 0, 'kirl', 'sjm', '', '');
 
 -- --------------------------------------------------------
 
@@ -82,7 +92,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `produto`
