@@ -57,6 +57,9 @@ session_start();
                         }else{
                            $email = $_COOKIE['email'];
                         }
+                        if ($email == 'adm@gmail.com') {
+                           header("Location:admin.php");
+                        }
                    ?>
                   <div class="dropdown">
                      <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>

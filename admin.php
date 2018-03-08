@@ -62,92 +62,42 @@ session_start();
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Categoria</th>
+                    <th>Quantidade</th>
                     <th>Fabricante</th>
                     <th>Preço</th>
                     <th class="actions">Ações</th>
                  </tr>
-            </thead>
-            <tbody  id="myTable">
- 
-                <tr>
-                    <td>01</td>
-                    <td>Gabinete Phantom 530 CA-PH530-W1</td>
-                    <td>Hardwere</td>
-                    <td>NZXT</td>
-                    <td>R$ 750,00</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-sm" href="produto.php">Visualizar</a>
-                        <a class="btn btn-warning btn-sm" href="edit-item.php">Editar</a>
-                        <a class="btn btn-danger btn-sm"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
+                    <?php 
+        include "banco.php";
+        $query = "select * from produto";
+        $consulta = mysqli_query($con, $query);
 
-                <tr>
-                    <td>02</td>
-                    <td>Gabinete Phantom 530 CA-PH530-W1</td>
-                    <td>Hardwere</td>
-                    <td>NZXT</td>
-                    <td>R$ 750,00</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-sm" href="produto.php">Visualizar</a>
-                        <a class="btn btn-warning btn-sm" href="edit-item.php">Editar</a>
-                        <a class="btn btn-danger btn-sm"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Gabinete Phantom 530 CA-PH530-W1</td>
-                    <td>Hardwere</td>
-                    <td>NZXT</td>
-                    <td>R$ 750,00</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-sm" href="produto.php">Visualizar</a>
-                        <a class="btn btn-warning btn-sm" href="edit-item.php">Editar</a>
-                        <a class="btn btn-danger btn-sm"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>04</td>
-                    <td>Gabinete Phantom 530 CA-PH530-W1</td>
-                    <td>Hardwere</td>
-                    <td>NZXT</td>
-                    <td>R$ 750,00</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-sm" href="produto.php">Visualizar</a>
-                        <a class="btn btn-warning btn-sm" href="edit-item.php">Editar</a>
-                        <a class="btn btn-danger btn-sm"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-
-                 <tr>
-                    <td>05</td>
-                    <td>Gabinete Phantom 530 CA-PH530-W1</td>
-                    <td>Hardwere</td>
-                    <td>NZXT</td>
-                    <td>R$ 750,00</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-sm" href="produto.php">Visualizar</a>
-                        <a class="btn btn-warning btn-sm" href="edit-item.php">Editar</a>
-                        <a class="btn btn-danger btn-sm"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>06</td>
-                    <td>Gabinete Phantom 530 CA-PH530-W1</td>
-                    <td>Hardwere</td>
-                    <td>NZXT</td>
-                    <td>R$ 750,00</td>
-                    <td class="actions">
-                        <a class="btn btn-success btn-sm" href="produto.php">Visualizar</a>
-                        <a class="btn btn-warning btn-sm" href="edit-item.php">Editar</a>
-                        <a class="btn btn-danger btn-sm"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
- 
-            </tbody>
+        while($p = mysqli_fetch_array($consulta)){
+          $id          = $p['id'];
+          $idc         = base64_encode($id);
+          $nomeprod    = $p['nomeprod'];
+          $categoria   = $p['categoria'];
+          $quantidade  = $p['quantidade'];
+          $fabricante  = $p['fabricante'];
+          $preco       = $p['preco'];
+          $preco       = number_format($preco, 2, ',','.');
+          echo "<tr>
+                 <td>$id</td>
+                 <td>$nomeprod</td>
+                 <td>$categoria</td>
+                 <td>$quantidade</td>
+                 <td>$fabricante</td>
+                 <td>R$ $preco</td>
+                 <td class='actions'>
+                 <a class='btn btn-success btn-sm' href ='visualizar.php?id=$id'>Visualizar</a>
+                 <a class='btn btn-success btn-sm' href ='edit-item.php?id=$id'>Editar</a>
+                 <a class='btn btn-success btn-sm' href ='excluir.php?id=$id'>Excluir</a>
+                 </td>
+                </tr>";
+    }
+  ?>
+  </thead>
+           </tbody>
          </table>
  
      </div>
@@ -187,6 +137,7 @@ session_start();
       </div>
     </div>
   </div>
+  </form>
 </div>
 
    <hr>

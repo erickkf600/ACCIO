@@ -1,12 +1,12 @@
 <?php
   // Pasta onde o arquivo vai ser salvo
-  $_UP['pasta'] = 'img/produtos/';
+  $_UP['pasta'] = 'imgprod/';
 
   // Tamanho máximo do arquivo (em Bytes)
   $_UP['tamanho'] = 1024 * 1024 * 20; // 20Mb
 
   // Array com as extensões permitidas
-  $_UP['extensoes'] = array('jpg', 'png');
+  $_UP['extensoes'] = array('jpg', 'png', 'jpeg');
 
   // Renomeia o arquivo? (Se true, o arquivo será salvo como .png e um nome único)
   $_UP['renomeia'] = true;
@@ -19,7 +19,7 @@
       $_UP['erros'][4] = 'Nenhum arquivo selecionado';
 
   // Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
-  if ($_FILES['arquivo']['error'] != 0) {
+  if ($_FILES['arquivo']['error'] != 0){
     die("ERRO! " . $_UP['erros'][$_FILES['arquivo']['error']]);
     exit; // Para a execução do 
   }
@@ -28,13 +28,13 @@
   // Faz a verificação da extensão do arquivo
   $extensao = explode('.', $_FILES['arquivo']['name']);
   $extensao = strtolower(end($extensao));
-    if (array_search($extensao, $_UP['extensoes']) === false) {
-      echo "Por favor, envie arquivos com as seguintes extensões: png ou jpg";
+    if (array_search($extensao, $_UP['extensoes']) === false){
+      echo "Por favor, envie arquivos com as seguintes extensões: png , jpg ou jpeg";
       exit;
 }
 
     // Faz a verificação do tamanho do arquivo
-    if ($_UP['tamanho'] < $_FILES['arquivo']['size']) {
+    if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
       echo "O arquivo enviado é muito grande, envie arquivos de até 10Mb.";
       exit;
 }
@@ -43,12 +43,9 @@
     // Primeiro verifica se deve trocar o nome do arquivo
     if ($_UP['renomeia'] == true) {
       // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .png
-      session_start();
-      $email = $_SESSION['email'];
-      include "banco.php";
-      $query = mysqli_query($con, "select * from usuario where email = '$email' limit 1");
+      $query = mysqli_query($con, "select * from produto where email = '$email' limit 1");
 
-        if($dados = mysqli_fetch_assoc($query)){
+        if($dados = mysqli_fetch_array($query)){
           $id = $dados['id'];  
         }
 
