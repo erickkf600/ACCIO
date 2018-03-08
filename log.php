@@ -10,9 +10,8 @@
 	}else{
 		header("Location: index.php");
 	}
-	if($email == "adm@gmail.com"){
-		header("Location:admin.php");
-	}
+	
+	
 	include "banco.php";
 	$query = "select * from login where email = '$email' and senha = '$senha' limit 1";
 	$consulta = mysqli_query($con, $query);

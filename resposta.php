@@ -14,12 +14,16 @@
 		if(empty($_POST['conectar'])){
 			session_start();
 			$_SESSION['email'] = $email;
-			$_SESSION['adm']   = $login['$adm'];
 		}else{
-			setcookie("email", $email,"adm",$adm, time()+60*2 );
+			setcookie("email", $email, time()+60*2 );
 		}
+		if($email == 'adm@gmail.com'){
+		  header("Location:admin.php");
+	    }
+	    
 	}
+		  header("Location:index.php");
 
-header("Location:index.php");
+	
 
 ?>

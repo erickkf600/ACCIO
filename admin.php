@@ -26,7 +26,9 @@ session_start();
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
 
         <a href="index.php"><header class="btn btn-warning" style="width: 100%;">
-      
+
+               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
+                
       <img class="logo" src="css/logo.png" alt="logo"> 
       </header></a>
       <div id="main" class="container mt-5">

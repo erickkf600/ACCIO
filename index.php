@@ -57,9 +57,12 @@ session_start();
                         }else{
                            $email = $_COOKIE['email'];
                         }
-                        if ($email == 'adm@gmail.com') {
-                           header("Location:admin.php");
-                        }
+                        $email = explode("@", $email);
+                        if($email[1] != 'adm'){
+		                    header("Location:index.php");
+	   					}else{
+	   						header("Location:admin.php");
+	   					}
                    ?>
                   <div class="dropdown">
                      <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
@@ -73,8 +76,6 @@ session_start();
 				    </div>
 				  </div>      
                </span> 
-
-               <!-- Menu em Mobile -->
             <div class="user">  
                <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
