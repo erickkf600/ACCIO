@@ -58,6 +58,16 @@ session_start();
                         }else{
                            $email = $_COOKIE['email'];
                         }
+                        switch ($email) {
+                           case 'adm@adm.com':
+                              header("Location:admin.php");
+                              break;
+                           case '!= adm@adm.com':
+                              header("Location:index.php");
+                              break;
+                             
+                        }
+                        
                    ?>
                   <div class="dropdown">
                      <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
