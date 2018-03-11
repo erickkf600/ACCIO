@@ -27,6 +27,7 @@ body{
     text-align: center;
 
 }
+
       /*Barra escondida*/
 #bar{
   display: none;
@@ -46,10 +47,9 @@ body{
 
 @media screen {
 
-.traco{
-
-
-}
+  #myTab2{
+  display: none;
+} 
 .user{
   font-size:2em;
   color:black;
@@ -63,8 +63,15 @@ body{
 
 
 } 
-
 @media only screen and (max-width: 1024px) { 
+  #myTab{
+  display: none;
+} 
+
+  #myTab2{
+  display: block;
+  text-align: center; 
+} 
 .user{
 display: none;
 }
@@ -169,5 +176,10 @@ div.scrollmenu a {
 div.scrollmenu a:hover {
     background-color: #777;
 }
+
+.nav-link .active a {
+  background-color: #777; 
+}
+
 
 

@@ -8,6 +8,7 @@ session_start();
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
       <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+      <link rel="icon" type="image/png" sizes="50x50" href="/icon.png">
       <link rel="stylesheet" href="css/layout.css">
       <link rel="stylesheet" href="css/slider.css">
       <link rel="stylesheet" href="css/vitrine/docs.theme.min.css">
@@ -57,12 +58,6 @@ session_start();
                         }else{
                            $email = $_COOKIE['email'];
                         }
-                        $email = explode("@", $email);
-                        if($email[1] != 'adm'){
-		                    header("Location:index.php");
-	   					}else{
-	   						header("Location:admin.php");
-	   					}
                    ?>
                   <div class="dropdown">
                      <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
@@ -76,6 +71,8 @@ session_start();
 				    </div>
 				  </div>      
                </span> 
+
+               <!-- Menu em Mobile -->
             <div class="user">  
                <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>

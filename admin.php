@@ -25,12 +25,12 @@ session_start();
    <body style="background-color: #efefef;">
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
 
-        <a href="index.php"><header class="btn btn-warning" style="width: 100%;">
-
-               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
-                
-      <img class="logo" src="css/logo.png" alt="logo"> 
-      </header></a>
+        <a href="index.php">
+          <header class="btn btn-warning" style="width: 100%;">
+            <img class="logo" src="css/logo.png" alt="logo">
+          </header>      
+        </a>
+               
       <div id="main" class="container mt-5">
           <h2 class="page-header text-danger">ESCRITÓRIO</h2>
 
@@ -143,7 +143,7 @@ session_start();
 </div>
 
    <hr>
-   </div> 
+   </div>
 
    <footer>
       <?php

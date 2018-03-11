@@ -187,32 +187,77 @@
           <a class="nav-link" data-toggle="pill" href="#menu1">INFORMAÇÕES DA CONTA</a>
           <a class="nav-link" data-toggle="pill" href="#menu2">MEUS PEDIDOS</a>
       </div>
+                                <!-- menu mobile -->
+      <div id="myTab2" class="nav-pills nav justify-content-center scrollmenu">
+          <a class="nav-link active" data-toggle="pill" href="#home"><i class="fas fa-shopping-cart fa-2x"></i></a> 
+          <a class="nav-link" data-toggle="pill" href="#menu1"><i class="fas fa-user-circle fa-2x"></i></a>
+          <a class="nav-link" data-toggle="pill" href="#menu2"><i class="fas fa-archive fa-2x"></i></a>
+      </div>
+
     <div class="tab-content text-center">
      <div id="home" class="container active tab-pane" style="margin-bottom: 12%;"><br>
-      <h3>Você Tem <?php echo "0" ?> Itens em seu Carrinho</h3>
-      <a href="index.php" style="text-decoration: none;"><p>Que tal ir as compras?</p></a>
-      <div class="container">     
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>PRODUTO</th>
-        <th>VALOR UNITÁRIO</th>
-        <th>QUANTIDADE</th>
-        <th>SUBTOTAL</th>
-        <th>EXCLUIR</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><?php echo "#00000" ?></td>
-        <td><?php echo "R$ 000,00" ?></td>
-        <td><?php echo "uuuuuuuuu" ?></td>
-        <td><?php echo "00" ?></td>
-        <td><a href='excluir.php?id=$idc'><i class="fas fa-trash-alt fa-lg"></i></a></td>
-      </tr>
-     </tbody>
-    </table> 
-     </div> 
+      <h3 class="mb-5">Você Tem <?php echo "0" ?> Itens em seu Carrinho</h3>
+      <a href="index.php" class="btn btn-outline-danger w-50" style="text-decoration: none;">QUE TAL IR AS COMPRAS?
+        <span class="ml-3"><i class="fas fa-shopping-bag"></i></span></a>
+
+      <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">PRODUTO</th>
+                    <th style="width:10%">PREÇO</th>
+                    <th style="width:8%">QUANTIDADE</th>
+                    <th style="width:22%" class="text-center">SUBTOTAL</th>
+                    <th style="width:10%">EXCLUIR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td data-th="Product">
+                    <div class="row">
+
+                      <div class="col-md-4 hidden-xs">
+                        <img src="img/produtos/530.jpg" alt="item" class="img-fluid">
+                      </div>
+
+                        <div class="col-md-8">
+                          <h6 class="text-center">Gabinete NZXT Phantom 530 - CA-PH530-W1</h6>
+                        </div>
+
+                    </td>
+
+                    <td data-th="Preço">R$ 000.00</td>
+
+                    <td data-th="Quantidade">
+                      <input type="number" min="0" class="form-control text-center col-md-6" value="1">
+                    </td>              
+                    <td data-th="Subtotal" class="text-center">R$ 000.00</td>
+                    <td class="actions" data-th="Exluir">
+                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt fa-lg"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                  <td colspan="4"><h5>Frete Estimado:</h5></td>
+                  <td class="text-right"><b>R$ 000.00</b></td>                 
+                </tr>  
+                
+                <tr>
+                  <td colspan="4"><h5>Total:</h5></td>
+                  <td class="text-right"><b>R$ 000.00</b></td>           
+                </tr>
+
+                <tr>
+                  <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar Comprando</a></td>
+                  <td colspan="2" class="hidden-sm-up"></td>
+                  <td colspan="4">
+                    <a href="#" onclick="window.open('https://www.paypal.com/signin?country.x=BR&locale.x=pt_BR','PayPal','  LEFT=10, WIDTH=770, HEIGHT=400');" class="btn btn-success btn-lg btn-block"">Finalizar <i class="fa fa-angle-right"></i></a>
+                  </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </div> 
 
     <div id="menu1" class="container tab-pane fade"><br>
@@ -271,28 +316,30 @@
 
     <div id="menu2" class="container tab-pane fade" style="margin-bottom: 14%;"><br>
       <h3>LISTAGEM DAS SUAS ÚLTIMAS COMPRAS</h3>
-      <div class="container">     
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>PEDIDO #</th>
-        <th>DATA</th>
-        <th>USUÁRIO</th>
-        <th>TOTAL DO PEDIDO</th>
-        <th>STATUS</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><?php echo "#00000" ?></td>
-        <td><?php echo "00/00/000" ?></td>
-        <td><?php echo "uuuuuuuuu" ?></td>
-        <td><?php echo "00" ?></td>
-        <td><?php echo "eeeeeeee" ?></td>
-      </tr>
-     </tbody>
-    </table> 
-     </div>
+      <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>PEDIDO #</th>
+                    <th>PRODUTO</th>
+                    <th>DATA</th>
+                    <th>USUÁRIO</th>
+                    <th class="text-center">TOTAL DO PEDIDO</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td><?php echo "#00000" ?></td>
+                  <td><?php echo "#nomeprd" ?></td>
+                  <td><?php echo "00/00/000" ?></td>
+                  <td><?php echo "uuuuuuuuu" ?></td>
+                  <td><?php echo "00" ?></td>
+                  <td><?php echo "eeeeeeee" ?></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
     </div>
   </div>
 </div>
