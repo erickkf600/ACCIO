@@ -64,5 +64,6 @@
           // Não foi possível fazer o upload, provavelmente a pasta está incorreta
           echo "Não foi possível enviar o arquivo, tente novamente";
         }
+header("Location:admin.php");
 
 ?>        

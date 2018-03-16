@@ -32,7 +32,7 @@ session_start();
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="../../rocket.png"></button>
       <nav class="navbar navbar-expand-lg navbar-danger bg-warning">
          <a href="../../index.php">
-         <img class="navbar-brand" src="../../css/logo.png" alt="logo"></a>
+         <img class="navbar-brand" src="../../css/LOGO.png" alt="logo"></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span><i class="fas fa-bars"></i></span>
          </button>
@@ -62,22 +62,33 @@ session_start();
                         }else{
                            $email = $_COOKIE['email'];
                         }
+                        if($email == 'adm@adm.com'){
+                            
+                   ?>
+                     <div class="dropdown">
+                     <a href="admin.php" class="text-dark"><img src="../../adm.png" align="admpicture"></a>
+                     <div class="dropdown-menu"> 
+                        <a class="dropdown-item btn-dark text-center" href="../../admin.php">Escritório</a>
+                        <a class="dropdown-item btn-dark text-center" href="../../destroys.php">Sair</a>
+    
+                  <?php 
+                     }else{
                    ?>
                   <div class="dropdown">
-                     <p><?php echo $email ?> <i class='fas fa-sort-down'></i></p>
+                     <p><?php echo $email ?><i class='fas fa-sort-down'></i></p>
                   <div class="dropdown-menu" style="margin-left: 15%;">
-                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu1">Minha Conta</a>
-                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu2">Meus pedidos</a>
-                  <a class="dropdown-item btn-dark text-center" href="destroys.php">Sair</a>
+                  <a class="dropdown-item btn-dark text-center" href="../../perfil.php#menu1">Minha Conta</a>
+                  <a class="dropdown-item btn-dark text-center" href="../../perfil.php#menu2">Meus pedidos</a>
+                  <a class="dropdown-item btn-dark text-center" href="../../destroys.php">Sair</a>
                   <?php 
-                  }
+                  }}
                    ?>
                 </div>
-              </div>      
+              </div>     
                </span> 
 
-               <!-- Menu em Mobile -->
-            <div class="user">  
+                <!-- Menu em Mobile -->
+                <div class="user">  
                <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
             </div>
             </li>
@@ -89,25 +100,43 @@ session_start();
                   <a class="btn btn-dark btn-block"  data-toggle="modal" data-target="#myModal" href="#">Login</a>
                 </li>
                <li id="respons" class="nav-item">
-                  <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
+                  <a class="btn btn-dark btn-block" href="../../cadastro.php">Cadastrar-se</a>
                </li>
             <?php 
             }else{
+               if(isset($_SESSION['email'])){
+                           $email = $_SESSION['email'];
+                        }else{
+                           $email = $_COOKIE['email'];
+                        }
+                        if($email == 'adm@adm.com'){
              ?>
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="perfil.php#menu1">Minha Conta</a>
+               <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="../../admin.php">Escritório</a>
              </li>
 
             <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="perfil.php#menu2">Meus pedidos</a>
-            </li>
-
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
+               <a class="btn btn-dark btn-block" href="../../destroys.php">Sair</a>
             </li>
 
             <?php 
-            }
+               }else{
+             ?>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="../../perfil.php#menu1">Minha Conta</a>
+             </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="../../perfil.php#menu2">Meus pedidos</a>
+            </li>
+
+            <li id="respons" class="nav-item">
+               <a class="btn btn-dark btn-block" href="../../destroys.php">Sair</a>
+            </li>
+
+            <?php 
+            }}
              ?>
             <div class="pesq">
                <form>
@@ -116,7 +145,7 @@ session_start();
             </div>
          </div>
       </nav>
-      <nav id="sticky" class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <nav id="sticky" class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-md-center">
          <ul class="navbar-nav">
             <li class="nav-item">
             <li class="nav-item dropdown">
@@ -168,7 +197,7 @@ session_start();
       </nav>
       <div class="menu">
          <div>
-            <button class="btn btn-dark btn-lg btn-block" type="button" data-toggle="modal" data-target="#catagorias">Categorias</button>
+            <button class="btn btn-dark btn-lg btn-block font-weight-bold" type="button" data-toggle="modal" data-target="#catagorias">CATEGORIAS</button>
             <div class="modal fade" id="catagorias">
                <div class="modal-dialog">
                   <div class="modal-content">
@@ -176,12 +205,46 @@ session_start();
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                      </div>
                      <div class="modal-body">
-                        <a href="celulares.php"><button class="btn btn-default btn-lg btn-block ">Smartphones</button></a>
-                        <a href="informatica.php"><button class="btn btn-default btn-lg btn-block">Informática</button></a>
-                        <a href="eletronicos.php"><button class="btn btn-default btn-lg btn-block">Eletrônicos</button></a>
-                        <a href="games.php"><button class="btn btn-default btn-lg btn-block">Games</button></a>
-                        <a href="livros.php"><button class="btn btn-default btn-lg btn-block">Livros</button></a>
-                        <a href="moda.php"><button class="btn btn-default btn-lg btn-block">Moda</button></a>
+                        <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo">INFORMÁTICA<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
+                        <div id="demo" class="collapse">
+                           <a class="btn btn-dark btn-block" href="categorias/informatica/hardwere.php">Hardwere</a>
+                           <a class="btn btn-dark btn-block" href="categorias/informatica/perifericos.php">Perifericos</a>
+                           <a class="btn btn-dark btn-block" href="categorias/informatica/computadores-info.php">Computadores</a>
+                           <a class="btn btn-dark btn-block" href="categorias/informatica/notebooks.php">Notebooks</a>
+                           <a class="btn btn-dark btn-block" href="categorias/informatica/acessorios.php">Acessórios</a>
+                        </div>
+
+                        <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo1">ELETRÔNICOS<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
+                        <div id="demo1" class="collapse">
+                           <a class="btn btn-dark btn-block" href="categorias/eletronicos/smartphones.php">Smartphones</a>
+                           <a class="btn btn-dark btn-block" href="categorias/eletronicos/smatwatches.php">Smartwatches</a>
+                           <a class="btn btn-dark btn-block" href="categorias/eletronicos/drones.php">Drones</a>
+                           <a class="btn btn-dark btn-block" href="categorias/eletronicos/componetes.php">Componentes</a>
+                        </div>
+
+                        <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo2">GAMES<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
+                        <div id="demo2" class="collapse">
+                           <a class="btn btn-dark btn-block" href="categorias/games/consoles.php">Consoles</a>
+                           <a class="btn btn-dark btn-block" href="categorias/games/jogos.php">Jogos</a>
+                           <a class="btn btn-dark btn-block" href="categorias/games/acessorios.php">Acessórios</a>
+                        </div>
+
+                        <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo3">LEITURA<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
+                        <div id="demo3" class="collapse">
+                           <a class="btn btn-dark btn-block" href="categorias/leitura/hqs.php">HQs</a>
+                           <a class="btn btn-dark btn-block" href="categorias/leitura/mangas.php">Mangás</a>
+                           <a class="btn btn-dark btn-block" href="categorias/leitura/livros.php">Livros</a>
+                           <a class="btn btn-dark btn-block" href="categorias/leitura/ebooks.php">E-books</a>
+                        </div>
+
+                        <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo5">VESTÚARIO<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
+                        <div id="demo5" class="collapse">
+                           <a class="btn btn-dark btn-block" href="categorias/vestuario/masculino.php">Masculino</a>
+                           <a class="btn btn-dark btn-block" href="categorias/vestuario/feminino.php">Feminino</a>
+                           <a class="btn btn-dark btn-block" href="categorias/vestuario/calcados.php">Calçados</a>
+                           <a class="btn btn-dark btn-block" href="categorias/vestuario/acessorios.php">Acessórios</a>
+                        </div>
+
                      </div>
                   </div>
                </div>

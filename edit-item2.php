@@ -10,7 +10,7 @@
 
 	include "banco.php";
 
-	$query = "update filme 
+	$query = "update produto 
 				set codprod = '$codprod',
 					categoria = '$categoria',
 					tipo = $tipo,

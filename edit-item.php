@@ -37,7 +37,7 @@
     
     <a href="admin.php"><header class="btn btn-warning" style="width: 100%; display: inline-block;">
       
-      <img class="logo" src="css/logo.png" alt="logo"> 
+      <img class="logo" src="css/LOGO.png" alt="logo"> 
   </header></a>
      <div id="main" class="container bg-light mt-3">
   <h3 class="page-header">Adicionar Item</h3>

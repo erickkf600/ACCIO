@@ -1,9 +1,19 @@
 <?php
   include "login.php";
 session_start();
+  if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
+   header("Location:index.php"); 
+ }else{
+    if(isset($_SESSION['email'])){
+      $email = $_SESSION['email'];
+    }
+    if(isset($_COOKIE['email'])){
+      $email = $_COOKIE['email'];
+    }
+ }
 ?>
 <!doctype html>
-<html lang="pt-br">
+ <html lang="pt-br">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
@@ -25,11 +35,14 @@ session_start();
    <body style="background-color: #efefef;">
       <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
 
-        <a href="index.php">
+         <a href="index.php">
           <header class="btn btn-warning" style="width: 100%;">
-            <img class="logo" src="css/logo.png" alt="logo">
+            <img class="logo" src="css/LOGO.png" alt="logo">
           </header>      
         </a>
+        <div class="mr-3 float-right" style="font-size:2.5em;">
+          <a href="destroys.php" class="text-muted"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
                
       <div id="main" class="container mt-5">
           <h2 class="page-header text-danger">ESCRITÓRIO</h2>
@@ -92,8 +105,8 @@ session_start();
                  <td>R$ $preco</td>
                  <td class='actions'>
                  <a class='btn btn-success btn-sm' href ='visualizar.php?id=$id'>Visualizar</a>
-                 <a class='btn btn-success btn-sm' href ='edit-item.php?id=$id'>Editar</a>
-                 <a class='btn btn-success btn-sm' href ='excluir.php?id=$id'>Excluir</a>
+                 <a class='btn btn-warning btn-sm' href ='edit-item.php?id=$id'>Editar</a>
+                 <a class='btn btn-danger btn-sm' href ='excluir.php?id=$id'>Excluir</a>
                  </td>
                 </tr>";
     }

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
               $('#marcas').owlCarousel({
-                items: 4,
+                items: 6,
                 autoplay: 3000,
                 lazyLoad: true,
                 nav:false,

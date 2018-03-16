@@ -211,22 +211,20 @@
 
          <hr style="box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);">
 
-      <div class="container">
+      <div class="container" id="logo">
       <div class="row">
-        <div class="large-12 columns">
           <div class="owl-carousel1" id="marcas">
-            <img class="owl-lazy" data-src="img/marcas/lg.jpg" alt="lg"  style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/apple.jpg" alt="apple" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/samsung.jpg" alt="samsung" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/lenovo.jpg" alt="lenovo" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/asus.jpg" alt="asus" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/sony.jpg" alt="sony" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/acer.jpg" alt="acer" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/dell.jpg" alt="dell" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/xiomi.jpg" alt="xiomi" style="border-radius: 9%">
-            <img class="owl-lazy" data-src="img/marcas/oneplus.jpg" alt="one plus" style="border-radius: 9%">
-          </div>
-        </div>
+            <img class="owl-lazy" src="img/marcas/lg.jpg" alt="lg"  style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/apple.jpg" alt="apple" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/samsung.jpg" alt="samsung" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/lenovo.jpg" alt="lenovo" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/asus.jpg" alt="asus" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/sony.jpg" alt="sony" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/acer.jpg" alt="acer" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/dell.jpg" alt="dell" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/xiomi.jpg" alt="xiomi" style="border-radius: 9%">
+            <img class="owl-lazy" src="img/marcas/oneplus.jpg" alt="one plus" style="border-radius: 9%">
+          </div>    
       </div>
     </div>  
    </body>

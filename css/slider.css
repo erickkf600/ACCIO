@@ -3,13 +3,17 @@
       height:30%;   
 
   }
- @media only screen and (max-width: 991px){
+ @media only screen and (max-width: 1024px){
     #tipos img {
       width: 100%;
       height: 20%;
   }
   #prop{
     display: none;
+  }
+
+    .card{
+    margin-right:-10%; 
   }
 
   }

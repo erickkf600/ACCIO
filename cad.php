@@ -17,8 +17,8 @@
 
 	include "banco.php";
 
-	$query = "insert into login(usuario, nome, cpf, email, senha, dataNasc, endereco, bairro, cidade, telefoneFixo, telefoneCel) 
-	values('$usuario', '$nome','$cpf' ,'$email', '$senha', '$dataNasc', '$endereco', '$bairro', '$cidade', '$telefoneFixo', '$telefoneCel', ,)";
+	$query = "insert into login(usuario, nome, cpf, email, senha, dataNasc, endereco, bairro, cidade, telefoneFixo, telefoneCel,cep) 
+	values('$usuario', '$nome','$cpf' ,'$email', '$senha', '$dataNasc', '$endereco', '$bairro', '$cidade', '$telefoneFixo', '$telefoneCel', '$cep')";
 
 	mysqli_query($con, $query);
 

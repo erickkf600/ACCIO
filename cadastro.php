@@ -16,7 +16,7 @@
 </head>
     <a href="index.php"><header class="btn btn-warning" style="width: 100%;">
   
-      <img class="logo" src="css/logo.png" alt="logo"> 
+      <img class="logo" src="css/LOGO.png" alt="logo"> 
 </header></a>
 <body style="background-image:url(fundo2.jpg);">
 
@@ -35,8 +35,8 @@
                 <h2 class="fs-title">Informações de Contato</h2>
                 <input type="text" placeholder="Nome Completo" name="nome">
                 <input type="email" placeholder="Email" name="email">
-                <input type="number" min='0' placeholder="Telefone Fixo" name="telresid">
-                <input type="number" min='0' placeholder="Celular" name="cel">
+                <input type="number" min='0' placeholder="Telefone Fixo" name="telefoneFixo">
+                <input type="number" min='0' placeholder="Celular" name="telefoneCel">
                 <input type="button" name="next" class="next action-button" value="Próximo" />
             </fieldset>
 
