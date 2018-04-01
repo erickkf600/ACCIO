@@ -1,3 +1,16 @@
+@media print{
+    #table {
+    width: 300%;
+  }
+  .grafico{
+    padding: 100px;
+  }
+  .footer, .footer-bottom, #myTab, #myTab2, #head, #page{
+    display:none;
+  }
+}
+
+
 body{
   background-color: #F0F1F5;
 }
@@ -5,9 +18,19 @@ body{
   color: #000;
   text-decoration:none;
 }
+/*lista de funcionaroios hover*/
+#hover0:hover{
+  background-color: #b2b2b2;
+  cursor:pointer;
+}
+
+
 .dropdown{
-    padding:0px 60px;
-    text-align: center;
+  padding:0px 60px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-stretch: ultra-expanded;
+
 }
 .dropdown:hover > .dropdown-menu {
     display: block;
@@ -15,6 +38,7 @@ body{
     box-shadow:1px 1px 3px #333;
     padding:10px 30px;
     margin-top: 0%;
+    
 }
 .dropdown > .dropdown-toggle:active {
     /*Without this, clicking will make it sticky*/
@@ -25,6 +49,35 @@ body{
     display: inherit;
     padding:10px 60px;
     text-align: center;
+    
+
+}
+
+
+#drop{
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Asap', sans-serif;
+  font-weight: 600;
+  font-stretch: extra-expanded;
+  border-bottom: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  display:10px 11px;
+  padding: 10px 11px;
+  line-height: 23px;
+
+}
+
+#down{
+  font-size: 17px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-stretch: extra-expanded;
+  border-bottom: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  line-height: 15px;
 
 }
 
@@ -52,24 +105,19 @@ body{
 
 
 @media only screen and (max-width: 1024px) { 
-      #logo{
-        margin-left:4%;
+  #logo{
+    margin-left:4%;
     }
   #myTab{
   display: none;
 } 
 
-  #myTab2{
-  display: block;
-  text-align: center; 
-}
-
 .user{
 display: none;
 }
-#ordenar{
- margin-left: 30%;
- padding-top: 10%;
+#myTab2{
+  display: block;
+  text-align: center;
 }
 
 #login{
@@ -93,7 +141,11 @@ display: none;
 .menu{
     display:block;
     }        
+	#prop{
+		display: none;
+	}
 }
+
 
   /*Categorias*/
 
@@ -139,27 +191,260 @@ display: none;
 
 /******************************MENU DA PAGINA PERFIL*************************/
 
-div.scrollmenu {
-    background-color: #c4c4c4;
-    overflow: auto;
-    white-space: nowrap;
-}
-
-div.scrollmenu a {
+.tablink {
     display: inline-block;
     color:#000;
     text-align: center;
-    padding: 10px;
-    text-decoration: none;
+    padding:10px 70px;  
+    background-color: #898989;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 20%;
 }
 
-div.scrollmenu a:hover {
+.tablink:hover {
     background-color: #777;
+    text-decoration: none;
+    color: #000;
+    box-shadow: inset 0 3px #ffc107; 
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    -webkit-transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+#ad:hover{
+  box-shadow: inset 0 3px #000;
 }
 
-.nav-link .active a {
-  background-color: #777; 
+
+/*lista de funcionarios*/
+#user{
+  border-radius: 100px;
 }
+.low{
+  display: none;
+}
+.dc{
+  display: inline;
+}
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .low{
+    display: block;
+  }
+    table#func tbody td .form-control{
+    width:20%;
+    display: inline !important;
+  }
+
+  #user{
+    width: 30%;
+    border-radius: 0;
+  }
+  table#func thead { display:none; }
+  table#func tbody td { display: block; padding: .3rem; min-width:320px;}
+  table#func tbody tr td:first-child { background: #ddd; color: #fff; }
+  table#func tbody td:before {
+    content: attr(data-th); font-weight: bold;
+    display: inline; width: 5rem; 
+  }  
+  table#func tfoot td{display:block; }
+  table#func tfoot td .btn{display:block;}
+  
+}   
+
+
+/*perfil*/
+
+#logbox {
+  padding: 10px;
+  width: 100%;
+  background-color: #efefef;
+  -webkit-box-shadow: 0 1px 5px #ffc107;
+  -moz-box-shadow: 0 1px 5px #ffc107;
+  box-shadow: 0 1px 5px #ffc107;
+}
+
+h1 {
+  text-align: center;
+  font-size: 175%;
+  color: #757575;
+  font-weight: 300;
+}
+
+h1, input {
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  display: block;
+  margin: 0 auto 15px;
+  padding: 0 15px;
+  border: none;
+  border-bottom: 2px solid #ebebeb;
+}
+.input:focus {
+  outline: none;
+  border-bottom-color: #ffc107 !important;
+}
+.input:hover {
+  border-bottom-color: #dcdcdc;
+}
+.input:invalid {
+  box-shadow: none;
+}
+
+.pass:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.inputButton {
+  position: relative;
+  width: 85%;
+  height: 50px;
+  display: block;
+  margin: 30px auto 30px;
+  color: white;
+  background-color: #848484;
+  border: none;
+  -webkit-box-shadow: 0 5px 0 #ffc107;
+  -moz-box-shadow: 0 5px 0 #ffc107;
+  box-shadow: 0 5px 0 #ffc107;
+}
+.inputButton:hover {
+  top: 2px;
+  -webkit-box-shadow: 0 3px 0 #ffc107;
+  -moz-box-shadow: 0 3px 0 #ffc107;
+  box-shadow: 0 3px 0 #ffc107;
+}
+.inputButton:active {
+  top: 5px;
+  box-shadow: none;
+}
+.inputButton:focus {
+  outline: none;
+}
+
+      /*Configurações*/
+
+.cont{
+  font-size: 25px;
+  font-family: 'Orbitron', sans-serif;
+  font-stretch: ultra-expanded;
+}
+
+/* The switch - the box around the slide */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  float:right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slide */
+.slide {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slide:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input.check:checked + .slide {
+  background-color: #ffc107;
+}
+input:checked + .slide:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+/* Rounded slides */
+.slide.round {
+  border-radius: 34px;
+}
+
+.slide.round:before {
+  border-radius: 50%;
+}          
+
+.inputButton2 {
+  font-size: 20px;
+  position: relative;
+  width: 320px;
+  height: 50px;
+  display: block;
+  margin: 30px auto 30px;
+  color: white;
+  background-color: #444;
+  border: none;
+  box-shadow: 0 5px 0 #ffc107;
+}
+.inputButton2:hover {
+  top: 2px;
+  -webkit-box-shadow: 0 3px 0 #ffc107;
+  -moz-box-shadow: 0 3px 0 #ffc107;
+  box-shadow: 0 3px 0 #ffc107;
+}
+.inputButton2:active {
+  top: 5px;
+  box-shadow: none;
+}
+
+
+      /*formulario de funcionario*/
+#funcionario{
+  background: #eaeaea;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 100%;
+}  
+
+#label{
+  font-size: 17px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-stretch: extra-expanded;
+}   
+
+
+
+
+
+
+
 
 
 

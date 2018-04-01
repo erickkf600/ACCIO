@@ -1,4 +1,6 @@
-
+<?php 
+  include "banco.php";
+ ?>
    <body style="background-color: #efefef;">
       <div>
          <?php
@@ -13,85 +15,40 @@
          <div class="container mt-4 mb-5">
             <div class="row">
                <div class="col-md-12 text-center text-danger">
-                  <h2 class="font-weight-bold">NOVIDADES</h2>
+                  <h2 class="font-weight-bold" style="font-family: 'Orbitron', sans-serif; ">NOVIDADES</h2>
                </div>
             </div>
          </div> 
          <!--  slides -->
-         <div class="container-fluid text-center">
+         <div class="container-fluid col-sm-10">
             <div class="row-equal">
                <div class="owl-carousel owl-theme">
-                  <a href="produto.php" id="link"><div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
-                      <p class="font-weight-normal">Avista: <span class="text-center text-danger font-weight-bold">R$ 750,00</span></p></a>
-                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
-                      <a class="btn btn-warning btn-sm">Comprar</a>
-                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
+                <?php
+                  $resultado = "select * from produto limit 6";
+                  $iten = mysqli_query($con, $resultado);
+                   while($f = mysqli_fetch_array($iten)){ 
+                  $preco = $f['preco'];
+                  $preco = number_format($preco, 2, ',','.');
+                ?>
+                  <div >
+                    <a href="produto.php?id=<?php  echo $f['idprod']; ?>" id="link">
+                      <div class="card" style="width: 22rem;">
+                        <img class="card-img-top" src="img/produtos/<?php echo $f['img']; ?>"  width="100%" alt="card image">
+                        <div class="card-body">
+                            <b class="card-title"><?php echo $f['titulo']; ?></b>
+                             <p class="font-weight-normal">Avista: 
+                              <span class="text-center text-danger font-weight-bold">R$ <?php echo $preco ?></span></p>
+                              <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                        </div>
+                        <div class="card-footer text-center" id="cardfoot">      
+                            <a class="btn btn-warning">Comprar</a>
+                            <a href="carrinho.php?idprod=<?php  echo $f['idprod']; ?>"><button type="button" class="btn btn-outline-warning">Add Carinho 
+                              <span><i class="fas fa-cart-plus"></i></span>
+                          </button></a>
+                        </div>
                       </div>
-                      </div>
-
-                  <a href="produto.php" id="link"><div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
-                      <p class="font-weight-normal">Avista: <span class="text-center text-danger font-weight-bold">R$ 750,00</span></p></a>
-                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
-                      <a class="btn btn-warning btn-sm">Comprar</a>
-                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
-                      </div>
-                      </div>
-
-
-                  <a href="produto.php" id="link"><div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
-                      <p class="font-weight-normal">Avista: <span class="text-center text-danger font-weight-bold">R$ 750,00</span></p></a>
-                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
-                      <a class="btn btn-warning btn-sm">Comprar</a>
-                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
-                      </div>
-                      </div>
-
-
-                  <a href="produto.php" id="link"><div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
-                      <p class="font-weight-normal">Avista: <span class="text-center text-danger font-weight-bold">R$ 750,00</span></p></a>
-                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
-                      <a class="btn btn-warning btn-sm">Comprar</a>
-                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
-                      </div>
-                      </div>
-
-
-                  <a href="produto.php" id="link"><div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
-                      <p class="font-weight-normal">Avista: <span class="text-center text-danger font-weight-bold">R$ 750,00</span></p></a>
-                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
-                      <a class="btn btn-warning btn-sm">Comprar</a>
-                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
-                      </div>
-                      </div>
-
-
-                  <a href="produto.php" id="link"><div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="img/catalogo/530.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <b class="card-tex">Gabinete NZXT Phantom 530 - CA-PH530-W1</b>
-                      <p class="font-weight-normal">Avista: <span class="text-center text-danger font-weight-bold">R$ 750,00</span></p></a>
-                      <p class="font-italic">Ou parcele em até 6x sem juros</p>
-                      <a class="btn btn-warning btn-sm">Comprar</a>
-                       <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button> 
-                      </div>
-                      </div>
-
-
+                  </div>
+                <?php } ?>
                </div>
             </div>
          </div>
@@ -107,7 +64,7 @@
          <div class="container mt-4">
             <div class="row">
                <div class="col-md-12 text-center text-danger">
-                  <h2 class="font-weight-bold">MELHORES OFERTAS</h2>
+                  <h2 class="font-weight-bold" style="font-family: 'Orbitron', sans-serif; ">MELHORES OFERTAS</h2>
                </div>
             </div>
          </div>

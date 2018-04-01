@@ -18,8 +18,12 @@
 		}else{
 			setcookie("email", $email,"adm",$adm, time()+60*2 );
 		}
+
 	}
-
-header("Location:index.php");
-
+	if(empty($_GET['idprod'])){
+			header("Location: index.php");
+		}else{
+			$id = $_GET['idprod'];
+			header("Location: carrinho.php?idprod=$id");
+		}
 ?>

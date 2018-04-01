@@ -1,35 +1,8 @@
-#prod img {
-      width: auto;
-      height:30%;   
-
-  }
- @media only screen and (max-width: 1024px){
-    #tipos img {
-      width: 100%;
-      height: 20%;
-  }
-  #prop{
-    display: none;
-  }
-
-    .card{
-    margin-right:-10%; 
-  }
-
-  }
-
-    #tipos img {
-      width: 100%;
-      height:20%;
-
-  }
  .card{
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     position: relative;
     border:none;
-
 }
-
 .card-body{
   margin: 0;
   padding: 0;
@@ -39,30 +12,32 @@
 .card:hover {
   box-shadow: 16px 16px 100px 0 rgba(0,0,0,0.2);
 }
-#logos{
-  border-radius:50px;
-}
-
 .item:hover{
   background-color:#ffc107;
   border-radius: 10px;
 }
+     /*******************Carrinho***********************/  
 
-
-     /*******************Carrinho***********************/    
 .table>tbody>tr>td, .table>tfoot>tr>td{
     vertical-align: middle;
+}
+#mais-menos{
+  text-align:center;
 }
 @media screen and (max-width: 1024px) {
     table#cart tbody td .form-control{
     width:20%;
     display: inline !important;
   }
+  #mais-menos{
+  text-align:left;
+  padding-left: 30px;
+}
   .actions .btn{
     width:36%;
     margin:1.5em 0;
   }
-  
+
   .actions .btn-info{
     float:left;
   }
@@ -70,18 +45,27 @@
     float:right;
   }
   
-  table#cart thead { display: none; }
-  table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-  table#cart tbody tr td:first-child { background: #333; color: #fff; }
+   table#cart thead { display: none; }
+  table#cart tbody td { display: block; padding: .10rem; min-width:320px;}
+  table#cart tbody tr td:first-child { background: #afafaf; color: #fff; }
   table#cart tbody td:before {
     content: attr(data-th); font-weight: bold;
-    display: inline-block; width: 8rem;
+    display: inline-block; width: 10rem;
   }
-  
-  
-  
+   
   table#cart tfoot td{display:block; }
   table#cart tfoot td .btn{display:block;}
   
 }
 /***************************************************/
+
+
+#categorias{
+  height: 80px;
+}
+@media screen and (max-width: 1024px) {
+  #categorias{
+  height: 70px;
+  }
+
+}

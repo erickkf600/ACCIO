@@ -1,21 +1,42 @@
-<?php 
-	$nomeprod = strip_tags($_POST['nomeprod']);
-	$codprod = strip_tags($_POST['codprod']);
-	$preco = strip_tags($_POST['preco']);
-	$categoria = strip_tags($_POST['categoria']);
-	$caracteristica = strip_tags($_POST['caracteristica']);
-	$tipo = strip_tags($_POST['tipo']);
-	$marca = strip_tags($_POST['marca']);
-	$quantidade = strip_tags($_POST['quantidade']);
-	$modelo = strip_tags($_POST['modelo']);
-	$fabricante = strip_tags($_POST['fabricante']);
-
-	include "banco.php";
-
-	$query = "insert into produto(nomeprod, codprod, tipo, marca, fabricante, categoria, modelo, quantidade, preco,caracteristica ) 
-	values('$nomeprod', '$codprod', '$tipo', '$marca', '$fabricante', '$categoria', '$modelo', '$quantidade', '$preco', '$caracteristica')";
-
-	mysqli_query($con, $query);
-
-	include "upload.php";
+<?php 
+	$titulo = strip_tags($_POST['titulo']);
+	$codigo = strip_tags($_POST['codigo']);
+	$categoria = strip_tags($_POST['categoria']);
+	$subcategoria = strip_tags($_POST['subcategoria']);
+	$preco = strip_tags($_POST['preco']);
+	$estoque = strip_tags($_POST['estoque']);
+	$detalhes = $_POST['detalhes'];
+	$conteudo = $_POST['conteudo'];
+
+	include "banco.php";
+
+	$query = "insert into produto(
+	titulo,
+	codigo,
+	categoria, 
+	subcategoria, 
+	preco,
+	estoque,
+	detalhes, 
+	conteudo) 
+	
+	values(
+	'$titulo', 
+	'$codigo', 
+	'$categoria', 
+	'$subcategoria', 
+	'$preco',
+	'$estoque', 
+	'$detalhes', 
+	'$conteudo')";
+
+	mysqli_query($con, $query);
+
+	include "upload.php";
+
+	echo "<h1>$titulo</h1><p>Foi Adicionado ao sistema.</p>";
+
+	header("Refresh: 3, admin.php");
+
+
 ?>

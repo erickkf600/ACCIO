@@ -1,173 +1,128 @@
 <?php
   include "../menu.php";
+  include "../../banco.php";
+               /*************PAGINAÇÃO********************/
+//Verificar se está sendo passado na URL a página atual, senao é atribuido a pagina 
+$pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+
+//Selecionar todos os itens da tabela
+$resultado = "select * from produto";
+$iten = mysqli_query($con, $resultado);
+
+//Contar o total de itens
+$total = mysqli_num_rows($iten);
+
+//Seta a quantidade de itens por pagina
+$quantidade_pg = 9;
+
+//calcular o número de pagina necessárias para apresentar todos os itens
+$num_pagina = ceil($total/$quantidade_pg);
+
+//Calcular o inicio da visualizacao
+$incio = ($quantidade_pg*$pagina)-$quantidade_pg;
+
+//Selecionar os cursos a serem apresentado na página
+$resultado = "select * from produto limit $incio, $quantidade_pg";
+$iten = mysqli_query($con, $resultado);
+$total = mysqli_num_rows($iten);
 ?>
-<body>
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb" style="background-color: #e5e5e5">
-    <li class="breadcrumb-item"><a href="../../index.php">Inicio</a></li>
-    <li class="breadcrumb-item"><a href="#">Informática</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Computadores</li>
-  </ol>
-</nav>
+    <body>
 
-  <div class="container mt-3" style="border">
-  
-    <div class="row">
-  <div class="container gallery-container"> 
-  <!--*****************paginação*************************--> 
-  <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-end mt-4">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Voltar</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Proximo</a>
-    </li>
-  </ul>
-  <ul id="ordenar" class="pagination" style="margin-top: -5.5%;">
-    <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Ordenar por:</label>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected></option>
-    <option value="1">Nome (A-Z)</option>
-    <option value="2">Nome (z-A)</option>
-    <option value="3">Preço (Menor-Maior)</option>
-    <option value="3">Preço (Maior-Menor)</option>
-  </select>
-</div>
-  </ul>
-</nav>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: #e5e5e5">
+                <li class="breadcrumb-item"><a href="../../index.php" class="text-dark">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-dark">Informática</a></li>
+                <li class="breadcrumb-item active" aria-current="page" class="text-dark">Computadores</li>
+            </ol>
+        </nav>
 
-  <!--**************************************************-->    
-    <div class="tz-gallery"> 
-        <div class="row md-3">
+        <div class="container mt-3">
+            
+            <!-- PAGINAÇÃO -->
+          <ul class="pagination">
+          <?php
+            $voltar = $pagina - 1;
+            $proximo = $pagina + 1; 
+          ?>
+                      <!-- VOLTAR -->
+          <?php if($voltar != 0){ ?>
+            <li class="page-item"><a class="page-link text-dark" href="computadores.php?pagina=<?php echo $voltar; ?>">Voltar</a>
+          <?php }else{ ?> 
+            <span class="page-link text-dark">Voltar</span>
+          <?php } ?>
+            </li>  
+                  <!-- ************* -->
 
-            <div class="col-md-4 mt-3">
-              <div class="card">
-                <img src="../imgcateg/530.jpg" alt="gabinete" class="card-img-top">
-                  <div class="card-body">
-                    <h3>Gabinete NZXT Phantom 530</h3>
-                    <p>CA-PH530-W1 - Branco</p>
-                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                    <p>Ou parcele em até 6x sem juros</p>
-                    <a class="btn btn-warning btn-sm">Comprar</a>
-                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                  </div>
+                  <!-- NUMERAÇÃO DA PÁGINA -->
+          <?php for($i = 1; $i < $num_pagina + 1; $i++){ ?>     
+            <li class="page-item"><a class="page-link text-dark" href="computadores.php?pagina=<?php echo $i; ?>"><?php echo $i ?></a></li>
+          <?php } ?>
+                     <!-- ************* -->
+          <?php if($proximo <= $num_pagina){ ?>           
+            <li class="page-item"><a class="page-link text-dark" href="computadores.php?pagina=<?php echo $proximo; ?>">proximo</a></li>
+          <?php }else{ ?>
+            <a class="page-link text-muted">Proximo</a>
+          <?php } ?>    
+          </ul>
+                    <!-- FIM DA PAGINAÇÃO -->
+
+            <div class="row d-flex justify-content-center">
+                <?php 
+                while($f = mysqli_fetch_array($iten)){ 
+                $preco = $f['preco'];
+                $preco = number_format($preco, 2, ',','.');
+        ?>
+                <div class="col-xs-12 col-sm-12 col-md-4 mb-5">
+                    <a href="../../produto.php?id=<?php  echo $f['idprod']; ?>" id="link">
+                      <div class="card">
+                        <img class="card-img-top" src="../../img/produtos/<?php echo $f['img']; ?>" width="100%" alt="card image">
+                        <div class="card-body">
+                          <b class="card-tex"><?php echo $f['titulo']; ?></b>
+                            <p class="font-weight-normal">Avista: 
+                              <span class="text-center text-danger font-weight-bold">R$ <?php echo $preco ?></span></p>
+                              <p class="font-italic">Ou parcele em até 6x sem juros</p>
+                        </div>
+                        <div class="card-footer text-center">
+                          <a class="btn btn-warning" href="../../carrinho.php?id=<?php  echo $f['idprod']; ?>">Comprar</a>
+                          <button type="button" class="btn btn-outline-warning">Add Carinho 
+                            <span><i class="fas fa-cart-plus"></i></span>
+                          </button>
+                        </div>
+                      </div></a> 
                 </div>
+                <?php } ?>
             </div>
-             
-            <div class="col-md-4 mt-3">
-                <div class="card">
-                  <img src="../imgcateg/530.jpg" alt="gabinete" class="card-img-top">
-                    <div class="card-body">
-                      <h3>Gabinete NZXT Phantom 530</h3>
-                      <p>CA-PH530-W1 - Branco</p>
-                      <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                    <p>Ou parcele em até 6x sem juros</p>
-                    <a class="btn btn-warning btn-sm">Comprar</a>
-                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                    </div>
-                  </div>
-            </div>
-             
-            <div class="col-md-4 mt-3">
-              <div class="card">
-                <img src="../imgcateg/530.jpg" alt="gabinete" class="card-img-top">
-                  <div class="card-body">
-                    <h3>Gabinete NZXT Phantom 530</h3>
-                    <p>CA-PH530-W1 - Branco</p>
-                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                    <p>Ou parcele em até 6x sem juros</p>
-                    <a class="btn btn-warning btn-sm">Comprar</a>
-                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                  </div>
-                </div>
-            </div>
+                      <!-- PAGINAÇÃO -->
+                  <ul class="pagination">
+                  <?php
+                    $voltar = $pagina - 1;
+                    $proximo = $pagina + 1; 
+                  ?>
+                              <!-- VOLTAR -->
+                  <?php if($voltar != 0){ ?>
+                    <li class="page-item"><a class="page-link text-dark" href="computadores.php?pagina=<?php echo $voltar; ?>">Voltar</a>
+                  <?php }else{ ?> 
+                    <span class="page-link text-dark">Voltar</span>
+                  <?php } ?>
+                    </li>  
+                          <!-- ************* -->
+
+                          <!-- NUMERAÇÃO DA PÁGINA -->
+                  <?php for($i = 1; $i < $num_pagina + 1; $i++){ ?>     
+                    <li class="page-item"><a class="page-link text-dark" href="computadores.php?pagina=<?php echo $i; ?>"><?php echo $i ?></a></li>
+                  <?php } ?>
+                             <!-- ************* -->
+                  <?php if($proximo <= $num_pagina){ ?>           
+                    <li class="page-item"><a class="page-link text-dark" href="computadores.php?pagina=<?php echo $proximo; ?>">proximo</a></li>
+                  <?php }else{ ?>
+                    <a class="page-link text-muted">Proximo</a>
+                  <?php } ?>    
+                  </ul>
+                            <!-- FIM DA PAGINAÇÃO -->
         </div>
+    </body>
 
-        <div class="row md-3">
-
-            <div class="col-md-4 mt-3">
-              <div class="card">
-                <img src="../imgcateg/530.jpg" alt="gabinete" class="card-img-top">
-                  <div class="card-body">
-                    <h3>Gabinete NZXT Phantom 530</h3>
-                    <p>CA-PH530-W1 - Branco</p>
-                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                    <p>Ou parcele em até 6x sem juros</p>
-                    <a class="btn btn-warning btn-sm">Comprar</a>
-                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                  </div>
-                </div>
-            </div>
-             
-            <div class="col-md-4 mt-3">
-                <div class="card">
-                  <img src="../imgcateg/530.jpg" alt="gabinete" class="card-img-top">
-                    <div class="card-body">
-                      <h3>Gabinete NZXT Phantom 530</h3>
-                      <p>CA-PH530-W1 - Branco</p>
-                      <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                    <p>Ou parcele em até 6x sem juros</p>
-                    <a class="btn btn-warning btn-sm">Comprar</a>
-                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                    </div>
-                  </div>
-            </div>
-             
-            <div class="col-md-4 mt-3">
-              <div class="card">
-                <img src="../imgcateg/530.jpg" alt="gabinete" class="card-img-top">
-                  <div class="card-body">
-                    <h3>Gabinete NZXT Phantom 530</h3>
-                    <p>CA-PH530-W1 - Branco</p>
-                    <h5>Avista: <span class="text-center text-danger">R$ 750,00</span></h5>
-                    <p>Ou parcele em até 6x sem juros</p>
-                    <a class="btn btn-warning btn-sm">Comprar</a>
-                    <button type="button" class="btn btn-outline-warning btn-sm">Add Carinho <span><i class="fas fa-cart-plus"></i></span></button>
-                  </div>
-                </div>
-            </div>
-        </div>
-
-     </div> 
-      <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-end mt-4">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Voltar</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Proximo</a>
-    </li>
-  </ul>
-  <ul id="ordenar" class="pagination" style="margin-top: -5.5%;">
-    <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <label class="input-group-text" for="inputGroupSelect01">Ordenar por:</label>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected></option>
-    <option value="1">Nome (A-Z)</option>
-    <option value="2">Nome (z-A)</option>
-    <option value="3">Preço (Menor-Maior)</option>
-    <option value="3">Preço (Maior-Menor)</option>
-  </select>
-</div>
-  </ul>
-</nav>
-
-  </div> 
-</div> 
-</div>
-</body>
-
-<?php
+    <?php
   include "../footer.inc";
 ?>

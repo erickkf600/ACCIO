@@ -7,7 +7,9 @@
 	$cep = strip_tags($_POST['cep']);
 	$endereco = strip_tags($_POST['endereco']);
 	$cidade = strip_tags($_POST['cidade']);
+	$numero = strip_tags($_POST['numero']);
 	$bairro = strip_tags($_POST['bairro']);
+	$estado = strip_tags($_POST['estado']);
 
 	$dataNasc = strip_tags($_POST['dataNasc']);
 	$cpf = strip_tags($_POST['cpf']);
@@ -17,8 +19,8 @@
 
 	include "banco.php";
 
-	$query = "insert into login(usuario, nome, cpf, email, senha, dataNasc, endereco, bairro, cidade, telefoneFixo, telefoneCel,cep) 
-	values('$usuario', '$nome','$cpf' ,'$email', '$senha', '$dataNasc', '$endereco', '$bairro', '$cidade', '$telefoneFixo', '$telefoneCel', '$cep')";
+	$query = "insert into login(usuario, nome, cpf, email, senha, dataNasc, endereco, numero, estado, bairro, cidade, telefoneFixo, telefoneCel,cep) 
+	values('$usuario', '$nome','$cpf' ,'$email', '$senha', '$dataNasc', '$endereco', '$numero', '$estado', '$bairro', '$cidade', '$telefoneFixo', '$telefoneCel', '$cep')";
 
 	mysqli_query($con, $query);
 

@@ -5,9 +5,9 @@
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb" style="background-color: #e5e5e5">
-    <li class="breadcrumb-item"><a href="../../index.php">Inicio</a></li>
-    <li class="breadcrumb-item"><a href="#">Informática</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Hardwere</li>
+    <li class="breadcrumb-item"><a href="../../index.php" class="text-dark">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="#" class="text-dark">Informática</a></li>
+    <li class="breadcrumb-item active" aria-current="page" class="text-dark">Hardwere</li>
   </ol>
 </nav>
 
@@ -19,13 +19,13 @@
   <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-end mt-4">
     <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Voltar</a>
+      <a class="page-link text-dark" href="#" tabindex="-1">Voltar</a>
     </li>
-    <li class="page-item"><a class="page-link btn-warning" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
     <li class="page-item">
-      <a class="page-link" href="#">Proximo</a>
+      <a class="page-link text-dark" href="#">Proximo</a>
     </li>
   </ul>
   <ul id="ordenar" class="pagination" style="margin-top: -5.5%;">
@@ -141,11 +141,11 @@
     <li class="page-item disabled">
       <a class="page-link" href="#" tabindex="-1">Voltar</a>
     </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+    <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
     <li class="page-item">
-      <a class="page-link" href="#">Proximo</a>
+      <a class="page-link text-dark" href="#">Proximo</a>
     </li>
   </ul>
   <ul id="ordenar" class="pagination" style="margin-top: -5.5%;">

@@ -44,9 +44,11 @@
                 <h2 class="fs-title">Informações de Envio e Cobrança</h2>
                 <input type="number" min='0' placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
                onblur="pesquisacep(this.value);">
+                <input type="text" placeholder="Estado" name="estado" id="estado">
                 <input type="text" placeholder="Endereço" name="endereco" id="endereco">
                 <input type="text" placeholder="Cidade" name="cidade" id="cidade">
                 <input type="text" placeholder="Bairro" name="bairro" id="bairro">
+                <input type="text" placeholder="Número" name="numero" id="numero">
                 <input type="button" name="previous" class="previous action-button-previous" value="Voltar"/>
                 <input type="button" name="next" class="next action-button" value="Próximo"/>
                 
@@ -54,7 +56,7 @@
 
             <fieldset>
                 <h2 class="fs-title">Informações do Usuário</h2>
-                <input type="date"  placeholder="Data de Nascimento" name="datanasc">
+                <input type="date"  placeholder="Data de Nascimento" name="dataNasc">
                 <input type="number" min='0' placeholder="CPF" name="cpf">
                 <input type="text"  placeholder="Nome de Usuário" name="usuario">
                 <input type="password"  placeholder="Senha" name="senha">
@@ -72,80 +74,14 @@
         ?>
     </div>
 </div>
-<!-- /.MultiStep Form -->
-<script type="text/javascript" >
-    
-    function limpa_formulário_cep() {
-            //Limpa valores do formulário de cep.
-            document.getElementById('endereco').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade').value=("");
-      
-    }
 
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('endereco').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade').value=(conteudo.localidade);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
-        
-    function pesquisacep(valor) {
-
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
-
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
-
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('endereco').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade').value="...";
-               
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-
-                //Sincroniza com o callback.
-                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
-        }
-    };
-
-    </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 
   
-
     <script  src="js/index.js"></script>
+
 
 
 

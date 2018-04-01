@@ -1,303 +1,197 @@
 <?php
-  include "login.php";
-session_start();
+  include "header.php"
 ?>
-    <!doctype html>
-    <html lang="pt-br">
+<style>
+  
+.contact-form, .contact-add-box {
+    background-color: #c1c1c1;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 15px;
+}
+.contact-section h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #af0808;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+ .form-control {
+    height: 45px;
+    border: 1px solid #242424;
+    border-radius: 0px;
+    font-size: 16px;
+    color: #242424;
+    padding: 0 10px 0 20px;
+}
+.contact-form textarea.form-control {
+    height: 140px;
+    resize: inherit;
+    border-radius: 0px;
+}
+.comment-box {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/* Contact Add Box  */
+.address-details {margin-top:45px;margin-bottom:45px;}
+.contact-add-box ul {
+    list-style:none;
+    font-size:15px;
+    font-weight:500;
+    line-height:25px;
+}
+.contact-add-box i { 
+    color: #af0808;
+    padding-right:10px;
+}
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-        <meta http-eqiv="X-UA-Compatible" content="IE=edge" />
-
-        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-        <link rel="icon" type="icone.png" sizes="50x50" href="icon.png">
-        <link rel="stylesheet" href="css/layout.css">
-        <link rel="stylesheet" href="css/slider.css">
-        <link rel="stylesheet" href="css/vitrine/docs.theme.min.css">
-        <link rel="stylesheet" href="css/vitrine/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/vitrine/owl.theme.default.min.css">
-        <link rel="stylesheet" href="css/logos/docs.theme.min.css">
-        <link rel="stylesheet" href="css/logos/owl.carousel.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="js/jquery.min.js"></script>
-        <script src="js/owl.carousel.js"></script>
-        <title>ACCIO</title>
-    </head>
-
-    <body style="background-color: #efefef;">
-        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="rocket.png"></button>
-        <nav class="navbar navbar-expand-lg navbar-danger bg-warning">
-            <a href="index.php">
-         <img class="navbar-brand" src="css/LOGO.png" alt="logo"></a>
-
-            <a href="perfil.php" class="navbar-toggler"><i class="fas fa-shopping-cart fa-lg" style="color: #000;"></i></a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span><i class="fas fa-bars"></i></span>
-         </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                    </li>
-                </ul>
-                <div>
-                    <form class="search">
-                        <input type="search" name="search" placeholder="Pesquisar">
-                    </form>
-                </div>
-                <span id="login" class="navbar-text ml-5" style="font-size:1.2em;">
-                <?php 
-                if(empty($_SESSION['email']) and empty($_COOKIE['email'])){
-                 ?>  
-               <div class="dropdown">
-                <i class="fas fa-user-circle fa-2x" data-toggle="dropdown"></i>
-                <div class="dropdown-menu"> 
-                  <a class="dropdown-item btn-dark" data-toggle="modal" data-target="#myModal" href="#">Login</a>
-                  <a class="dropdown-item btn-dark" href="cadastro.php">Cadastrar-se</a>
-                  <?php 
-                     }else{
-                        if(isset($_SESSION['email'])){
-                           $email = $_SESSION['email'];
-                        }else{
-                           $email = $_COOKIE['email'];
-                        }
-                        if($email == 'adm@adm.com'){
-                            
-                   ?>
-                     <div class="dropdown">
-                     <a href="admin.php" class="text-dark"><img src="adm.png" align="admpicture"></a>
-                     <div class="dropdown-menu"> 
-                        <a class="dropdown-item btn-dark text-center" href="admin.php">Escritório</a>
-                        <a class="dropdown-item btn-dark text-center" href="destroys.php">Sair</a>
+/* Social Icons */
+.social-icons {margin:48px 0px 48px 0px ;}
+.social-icons i{
+    margin-right: 10px;
+    padding: 0px;
+    font-size:35px;
+    color:#323232;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     
-                  <?php 
-                     }else{
-                   ?>
-                  <div class="dropdown">
-                     <p><?php echo $email ?><i class='fas fa-sort-down'></i></p>
-                  <div class="dropdown-menu" style="margin-left: 15%;">
-                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu1">Minha Conta</a>
-                  <a class="dropdown-item btn-dark text-center" href="perfil.php#menu2">Meus pedidos</a>
-                  <a class="dropdown-item btn-dark text-center" href="destroys.php">Sair</a>
-                  <?php 
-                  }}
-                   ?>
+}
+.social-icons li {margin:0px;padding:0;display:inline-block;}
+
+#social-fb:hover {
+     color: #3B5998;
+     transition:all .001s;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+     transition:all .001s;
+ }
+ #social-gp:hover {
+     color: #d34836;
+     transition:all .001s;
+ }
+ #social-em:hover {
+     color: #f39c12;
+     transition:all .001s;
+ }
+
+
+</style>
+<div id="myTab" class="nav-pills nav justify-content-center scrollmenu">
+  <a href="perfil.php" class="tablink">
+    <i class="fas fa-user-circle fa-lg"></i> MINHA CONTA
+  </a>
+  <a href="pedidos.php" class="tablink">
+    <i class="fas fa-archive fa-lg"></i> MEUS PEDIDOS
+  </a>
+  <a href="contato.php" class="tablink">
+    <i class="fas fa-exclamation-triangle fa-lg"></i> INFORMAR PROBLEMAS
+  </a>
+  <a href="config.php" class="tablink">
+    <i class="fas fa-cog fa-lg"></i> CONFIGURAÇÕES
+  </a>
+  <a href="destroys.php" class="tablink">
+    <i class="fas fa-sign-out-alt fa-lg"></i> SAIR
+  </a>
+</div>
+<!-- menu mobile -->
+<div id="myTab2" class="nav-pills nav justify-content-center scrollmenu">
+  <a href="perfil.php" class="tablink">
+    <i class="fas fa-user-circle fa-lg"></i>
+  </a>
+  <a href="pedidos.php" class="tablink">
+    <i class="fas fa-archive fa-lg"></i>
+  </a>
+  <a href="contato.php" class="tablink">
+    <i class="fas fa-exclamation-triangle fa-lg"></i>
+  </a>
+  <a href="config.php" class="tablink">
+    <i class="fas fa-cog fa-lg"></i>
+  </a>
+  <a href="destroys.php" class="tablink">
+    <i class="fas fa-sign-out-alt fa-lg"></i>
+  </a>
+</div>
+<div class="contact-section">
+  <div class="container-fluid col-sm-12 d-flex justify-content-center">
+    <div class="row">
+      <div class="col-md-8 col-sm-12 mt-5">
+        <div class="contact-form">
+          <form method="post" action="">
+            <h4>Informe seus dados</h4>
+            <div class="row">
+              <div class="form-group service-form-group col-md-12">
+                <label class="control-label sr-only" for="name"></label>
+                <input name="nome" type="text" placeholder="Nome" class="form-control" required>
                 </div>
-              </div>     
-               </span> 
-
-                <!-- Menu em Mobile -->
-                <div class="user">  
-               <a  href="perfil.php#home"><i class="fas fa-shopping-cart" style="color: #000;"></i></a>
-            </div>
-            </li>
-
-               <?php              
-                if (empty($_SESSION['email']) and empty($_COOKIE['email'])){ 
-               ?>
-               <li id="respons" class="nav-item">
-                  <a class="btn btn-dark btn-block"  data-toggle="modal" data-target="#myModal" href="#">Login</a>
-                </li>
-               <li id="respons" class="nav-item">
-                  <a class="btn btn-dark btn-block" href="cadastro.php">Cadastrar-se</a>
-               </li>
-            <?php 
-            }else{
-               if(isset($_SESSION['email'])){
-                           $email = $_SESSION['email'];
-                        }else{
-                           $email = $_COOKIE['email'];
-                        }
-                        if($email == 'adm@adm.com'){
-             ?>
-               <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="admin.php">Escritório</a>
-             </li>
-
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
-            </li>
-
-            <?php 
-               }else{
-             ?>
-
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="perfil.php#menu1">Minha Conta</a>
-             </li>
-
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="perfil.php#menu2">Meus pedidos</a>
-            </li>
-
-            <li id="respons" class="nav-item">
-               <a class="btn btn-dark btn-block" href="destroys.php">Sair</a>
-            </li>
-
-            <?php 
-            }}
-             ?>
-            <div class="pesq">
-               <form>
-                  <input type="search" name="search" placeholder="Pesquisar">
-               </form>
-            </div>
-         </div>
-      </nav>
-        <nav id="sticky" class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-md-center">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">INFORMÁTICA</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item btn-dark" href="categorias/informatica/hardwere.php">Hardwere</a>
-                            <a class="dropdown-item btn-dark" href="categorias/informatica/perifericos.php">Perifericos</a>
-                            <a class="dropdown-item btn-dark" href="categorias/informatica/computadores.php">Computadores</a>
-                            <a class="dropdown-item btn-dark" href="categorias/informatica/notebooks.php">Notebooks</a>
-                            <a class="dropdown-item btn-dark" href="categorias/informatica/acessorios.php">Acessórios</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">ELETRÔNICOS</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item btn-dark" href="categorias/eletronicos/smartphones.php">Smartphones</a>
-                            <a class="dropdown-item btn-dark" href="categorias/eletronicos/smatwatches.php">Smartwatches</a>
-                            <a class="dropdown-item btn-dark" href="categorias/eletronicos/drones.php">Drones</a>
-                            <a class="dropdown-item btn-dark" href="categorias/eletronicos/componetes.php">Componentes</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">GAMES</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item btn-dark" href="categorias/games/consoles.php">Consoles</a>
-                            <a class="dropdown-item btn-dark" href="categorias/games/jogos.php">Jogos</a>
-                            <a class="dropdown-item btn-dark" href="categorias/games/acessorios.php">Acessórios</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">LEITURA</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item btn-dark" href="categorias/leitura/hqs.php">HQs</a>
-                            <a class="dropdown-item btn-dark" href="categorias/leitura/mangas.php">Mangás</a>
-                            <a class="dropdown-item btn-dark" href="categorias/leitura/livros.php">Livros</a>
-                            <a class="dropdown-item btn-dark" href="categorias/leitura/ebooks.php">E-books</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">VESTÚARIO</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item btn-dark" href="categorias/vestuario/masculino.php">Masculino</a>
-                            <a class="dropdown-item btn-dark" href="categorias/vestuario/feminino.php">Feminino</a>
-                            <a class="dropdown-item btn-dark" href="categorias/vestuario/calcados.php">Calçados</a>
-                            <a class="dropdown-item btn-dark" href="categorias/vestuario/acessorios.php">Acessórios</a>
-                        </div>
-                    </li>
-            </ul>
-        </nav>
-        <div class="menu">
-            <div>
-                <button class="btn btn-dark btn-lg btn-block font-weight-bold" type="button" data-toggle="modal" data-target="#catagorias">CATEGORIAS</button>
-                <div class="modal fade" id="catagorias">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo">INFORMÁTICA<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
-                                <div id="demo" class="collapse">
-                                    <a class="btn btn-dark btn-block" href="categorias/informatica/hardwere.php">Hardwere</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/informatica/perifericos.php">Perifericos</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/informatica/computadores-info.php">Computadores</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/informatica/notebooks.php">Notebooks</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/informatica/acessorios.php">Acessórios</a>
-                                </div>
-
-                                <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo1">ELETRÔNICOS<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
-                                <div id="demo1" class="collapse">
-                                    <a class="btn btn-dark btn-block" href="categorias/eletronicos/smartphones.php">Smartphones</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/eletronicos/smatwatches.php">Smartwatches</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/eletronicos/drones.php">Drones</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/eletronicos/componetes.php">Componentes</a>
-                                </div>
-
-                                <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo2">GAMES<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
-                                <div id="demo2" class="collapse">
-                                    <a class="btn btn-dark btn-block" href="categorias/games/consoles.php">Consoles</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/games/jogos.php">Jogos</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/games/acessorios.php">Acessórios</a>
-                                </div>
-
-                                <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo3">LEITURA<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
-                                <div id="demo3" class="collapse">
-                                    <a class="btn btn-dark btn-block" href="categorias/leitura/hqs.php">HQs</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/leitura/mangas.php">Mangás</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/leitura/livros.php">Livros</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/leitura/ebooks.php">E-books</a>
-                                </div>
-
-                                <button class="btn btn-warning btn-lg btn-block mb-3" data-toggle="collapse" data-target="#demo1">VESTÚARIO<span class="float-right text-light"><i class="fas fa-angle-down fa-lg"></i></span></button>
-                                <div id="demo1" class="collapse">
-                                    <a class="btn btn-dark btn-block" href="categorias/vestuario/masculino.php">Masculino</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/vestuario/feminino.php">Feminino</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/vestuario/calcados.php">Calçados</a>
-                                    <a class="btn btn-dark btn-block" href="categorias/vestuario/acessorios.php">Acessórios</a>
-                                </div>
-
-                            </div>
-                        </div>
+                <div class="form-group service-form-group col-md-12">
+                  <label class="control-label sr-only" for="email"></label>
+                  <input name="email" type="email" placeholder="Email" class="form-control" required="">
+                  </div>
+                  <div class="form-group service-form-group col-md-12">
+                    <label class="control-label sr-only" for="phone"></label>
+                    <input name="celular" type="number" min="0" placeholder="Telefone" class="form-control" required="">
                     </div>
+                    <div class="form-group service-form-group col-md-12">
+                      <label class="control-label sr-only"></label>
+                      <input name="assunto" type="text" placeholder="Assunto" class="form-control" required>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label class="control-label sr-only" for="select"></label>
+                        <div class="select">
+                          <select name="tipo" name="select" class="form-control">
+                            <option disabled selected>Tipo de Contato</option>
+                            <option value="problemas na compra">Problemas com minha compra</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="elogio">Elogios</option>
+                            <option value="duvida">Dúvidas</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <textarea class="form-control" id="textarea" name="textarea" placeholder="Digite sua Mensagem"></textarea>
+                      </div>
+                      <div class="col-md-12 text-xs-right">
+                        <button class="inputButton" type="submit">ENVIAR</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
+              </div>
+              <div class="col-md-4 col-sm-12 mt-5">
+                <div class="contact-add-box">
+                  <h4>Nos ajude a te ajudar</h4>
+                  <p>Estamos prontos para ouvir suas necessidades e esclarecer quaisquer duvidas.</p>
+                    <p>Horário de atendimento: 09:00 às 19:00 de segunda à sexta-feira, horário de Brasília (exceto feriados)</p>
+
+                  <div class="social-icons">
+                    <div style="font-size:4em;">
+                      <i class="far fa-address-book"></i>
+                      <i class="fas fa-question"></i>
+                      <i class="fas fa-comments"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-         <div class="container-fluid">
-  		<h2>Contato</h2>  
-  			<h5>Para qualquer questão, sugestão ou crítica utilize o formulário abaixo</h5>
-
-  			<form class="col-sm-7"  method="post" action="mensagem.php">  
-  				<div class="form-group">
-			      <label for="exampleInputName1">Nome</label>
-			      <input required type="name" name="nome" class="form-control" placeholder="Digite seu nome">
-			    </div>
-			    
-			    <div class="form-group">
-			      <label for="exampleInputEmail1">E-mail</label>
-			      <input required type="email" name="email" class="form-control" placeholder="Digite seu email">
-			    </div>
-			    
-			    <div class="form-group">
-			      <label>Assunto</label>
-			      <select class="form-control" name="select" ">
-			      	<option disabled selected>Selecione</option>
-			        <option>Criticas</option>
-			        <option>Sugestões</option>
-			        <option>Duvidas</option>
-			        <option>Outros</option>
-			      </select>
-			    </div>
-			    
-			    <div class="form-group">
-			      <label for="exampleTextarea">Sua messagem</label>
-			      <textarea class="form-control" rows="5" type="text" name="mensagem"></textarea>
-			    </div>
-
-			    <button type="submit" class="btn btn-dark">Enviar</button>
-
-			</form>
-   <hr>
-   </div>  
-   <footer>
-      <?php
+        <hr>
+        </div>
+        <footer>
+          <?php
          include "footer.inc";
          ?>
-   </footer>
-         <script type="text/javascript" src="js/index.js"></script>
-         <script type="text/javascript" src="js/logos.js"></script>
-         <script type="text/javascript" src="js/vitrine.js"></script>
-
-         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
-   </body>
-</html>
+        </footer>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/logos.js"></script>
+        <script type="text/javascript" src="js/vitrine.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      </body>
+    </html>
